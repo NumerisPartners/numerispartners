@@ -3,13 +3,14 @@
 @section('title', 'Nos Services')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+   <!-- page title start -->
+   <x-breadcrumb title="Nos Services" />
+    <!-- <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl font-bold mb-4">Nos Services</h1>
             <p class="text-xl max-w-3xl mx-auto">Découvrez notre gamme complète de services digitaux conçus pour propulser votre entreprise vers de nouveaux sommets.</p>
         </div>
-    </section>
+    </section> -->
 
     <!-- Services Section -->
     <section class="py-16 bg-white">

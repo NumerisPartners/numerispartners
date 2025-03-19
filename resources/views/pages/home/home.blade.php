@@ -12,9 +12,11 @@
     <!-- Services Preview Section -->
     @include('pages.home.partials.services')
 
+    <!-- CTA Section -->
+    @include('components.cta-section')
+
     <!-- Why Choose Us Section -->
     @include('pages.home.partials.choose')
 
-    <!-- CTA Section -->
-    @include('components.cta-section')
+  
 @endsection

@@ -13,9 +13,10 @@
     
     <!-- Scripts and Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body class="antialiased bg-[#F9FAFB] home-14">
+<body class="antialiased bg-white home-14">
     
     <!-- Header / Navigation -->
     @include('layouts.header')

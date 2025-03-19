@@ -2,50 +2,7 @@
 @use "_mixins.scss" as mixins;
 @use "_variables.scss" as vars;
 
-// Buttons
-.btn {
-  @include mixins.button-base;
-  
-  &-primary {
-    @include mixins.button-primary;
-  }
-  
-  &-secondary {
-    @include mixins.button-secondary;
-  }
-  
-  &-lg {
-    padding: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
-    font-size: 1.125rem;
-  }
-  
-  &-sm {
-    padding: var(--spacing-xs, 0.25rem) var(--spacing-md, 1rem);
-    font-size: 0.875rem;
-  }
-}
 
-// Cards
-.card {
-  background-color: var(--background-color, #fff);
-  border-radius: var(--border-radius-lg, 0.5rem);
-  @include mixins.shadow('md');
-  overflow: hidden;
-  
-  &-header {
-    padding: var(--spacing-lg, 1.5rem);
-    border-bottom: 1px solid var(--border-color, #ddd);
-  }
-  
-  &-body {
-    padding: var(--spacing-lg, 1.5rem);
-  }
-  
-  &-footer {
-    padding: var(--spacing-lg, 1.5rem);
-    border-top: 1px solid var(--border-color, #ddd);
-  }
-}
 
 // Alerts
 .alert {

@@ -66,7 +66,12 @@
         </ul>
         </div>
         <div class="nav-right-part nav-right-part-desktop custom-md:inline-flex items-center">
-        <a class="btn btn-border-base" href="about.html">Discover More <i class="fa fa-plus"></i></a>
+            <a class=" btn btn-border-base " >
+                <svg class="size-6 fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+                </svg>  
+                Se connecter
+            </a>
         </div>
     </div>
     </nav>

@@ -6,7 +6,7 @@ mix.js('resources/js/app.js', 'public/js')
         require('@tailwindcss/postcss'),
         require('autoprefixer'),
     ])
-    .sass('resources/styles/app.scss', 'public/css', {}, [
+    .sass('resources/styles/main.scss', 'public/css', {}, [
         require('postcss-import'),
         require('postcss-nested'),
         require('postcss-nesting'),

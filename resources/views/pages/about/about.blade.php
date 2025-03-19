@@ -3,13 +3,8 @@
 @section('title', 'À propos')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold mb-4">À propos de nous</h1>
-            <p class="text-xl max-w-3xl mx-auto">Découvrez qui nous sommes et comment nous pouvons vous aider à réussir dans le monde digital.</p>
-        </div>
-    </section>
+    <!-- page title start -->
+    <x-breadcrumb title="À propos" />
 
     <!-- About Section -->
     <section class="py-16 bg-white">

@@ -1,5 +1,5 @@
 <!-- footer area start -->
-<footer class="footer-area bg-black bg-cover bg-center p-10">
+<footer class="footer-area bg-black bg-cover bg-center p-10 m-0">
       <!-- <div class="footer-subscribe">
          <div class="container">
             <div class="footer-subscribe-inner bg-cover bg-center wow animated fadeInUp" data-wow-duration="0.8s">

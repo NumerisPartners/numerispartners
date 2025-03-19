@@ -3,9 +3,6 @@
 
 // Media queries
 
-@mixin margin-0 {
-  margin: 0;
-}
 @mixin sm {
   @media (min-width: vars.$breakpoint-sm) {
     @content;
