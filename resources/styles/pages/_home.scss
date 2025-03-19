@@ -1,0 +1,191 @@
+// Home page styles
+@use "../_variables.scss" as vars;
+@use "../_mixins.scss" as mixins;
+
+// Features section
+.features {
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.md {
+      @include mixins.grid(3, vars.$spacing-xl);
+    }
+  }
+  
+  &-item {
+    text-align: center;
+    padding: vars.$spacing-lg;
+    
+    &-icon {
+      width: 4rem;
+      height: 4rem;
+      background-color: rgba(vars.$primary-color, 0.1);
+      color: vars.$primary-color;
+      border-radius: vars.$border-radius-full;
+      margin: 0 auto vars.$spacing-lg;
+      @include mixins.flex(row, center, center);
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      margin-bottom: vars.$spacing-md;
+      font-size: 1.25rem;
+    }
+    
+    p {
+      color: vars.$text-color-light;
+    }
+  }
+}
+
+// Services preview
+.services-preview {
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.md {
+      @include mixins.grid(2, vars.$spacing-xl);
+    }
+  }
+  
+  &-item {
+    background-color: vars.$background-color;
+    border-radius: vars.$border-radius-lg;
+    overflow: hidden;
+    @include mixins.shadow('md');
+    @include mixins.transition;
+    
+    &:hover {
+      transform: translateY(-5px);
+      @include mixins.shadow('lg');
+    }
+    
+    &-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    &-content {
+      padding: vars.$spacing-lg;
+      
+      h3 {
+        margin-bottom: vars.$spacing-md;
+        font-size: 1.25rem;
+      }
+      
+      p {
+        color: vars.$text-color-light;
+        margin-bottom: vars.$spacing-lg;
+      }
+    }
+  }
+}
+
+// Testimonials
+.testimonials {
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.lg {
+      @include mixins.grid(3, vars.$spacing-xl);
+    }
+  }
+  
+  &-item {
+    background-color: vars.$background-color;
+    border-radius: vars.$border-radius-lg;
+    padding: vars.$spacing-lg;
+    @include mixins.shadow('md');
+    
+    &-content {
+      font-style: italic;
+      margin-bottom: vars.$spacing-lg;
+      color: vars.$text-color;
+    }
+    
+    &-author {
+      @include mixins.flex(row, flex-start, center);
+      
+      &-image {
+        width: 3rem;
+        height: 3rem;
+        border-radius: vars.$border-radius-full;
+        margin-right: vars.$spacing-md;
+        object-fit: cover;
+      }
+      
+      &-info {
+        h4 {
+          margin-bottom: vars.$spacing-xs;
+          font-size: 1rem;
+        }
+        
+        p {
+          color: vars.$text-color-light;
+          font-size: 0.875rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// CTA section
+.cta {
+  background: linear-gradient(to right, vars.$primary-color, vars.$secondary-color);
+  color: white;
+  padding: vars.$spacing-3xl 0;
+  text-align: center;
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: vars.$spacing-lg;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto vars.$spacing-xl;
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: vars.$primary-color;
+    
+    &:hover {
+      background-color: rgba(white, 0.9);
+    }
+  }
+}
+
+// Stats section
+.stats {
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.sm {
+      @include mixins.grid(2, vars.$spacing-xl);
+    }
+    
+    @include mixins.lg {
+      @include mixins.grid(4, vars.$spacing-xl);
+    }
+  }
+  
+  &-item {
+    text-align: center;
+    
+    &-number {
+      font-size: 3rem;
+      font-weight: vars.$font-weight-bold;
+      color: vars.$primary-color;
+      margin-bottom: vars.$spacing-sm;
+    }
+    
+    &-label {
+      color: vars.$text-color-light;
+      font-size: 1.125rem;
+    }
+  }
+}

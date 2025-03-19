@@ -1,0 +1,175 @@
+/*----------------------------------------------
+    # banner style
+----------------------------------------------*/
+.banner-area {
+  @apply mt-[-120px];
+}
+.banner-area-1 {
+  @apply pt-[180px];
+
+  .animate-img-1 {
+    @apply absolute bottom-[100px] left-20;
+  }
+  .animate-img-2 {
+    @apply absolute bottom-[50px] left-[100px];
+  }
+}
+.banner-area-2 {
+  @apply bg-[url("../images/bg/8.png")] pb-[70px] pt-[210px];
+
+  .bg-img-2 {
+    @apply absolute right-[-100px] top-0 w-[660px];
+  }
+}
+
+.banner-area-3 {
+  @apply ml-0;
+  .bg-gray {
+    @apply relative px-0 py-[140px];
+  }
+  .img-right {
+    @apply absolute inset-y-0 right-0 z-[1] h-full w-[55%];
+  }
+  &:after {
+    @apply absolute right-[40%] top-0 z-[2] h-full w-1/5 bg-[linear-gradient(to_right,#F8F9FC_50%,transparent)] content-[''];
+  }
+  .banner-inner {
+    @apply z-[3] !important;
+  }
+}
+
+.navbar-area-2 {
+  .nav-right-part {
+    @apply items-center;
+    .navbar-phone {
+      @apply text-heading-color;
+      @apply bg-transparent;
+      .icon {
+        @apply bg-[#246bfd2e];
+        img {
+          filter: invert(38%) sepia(100%) saturate(3579%) hue-rotate(212deg)
+            brightness(97%) contrast(105%);
+        }
+      }
+      h5,
+      span {
+        @apply text-heading-color;
+      }
+    }
+  }
+}
+
+.banner-inner {
+  @apply relative z-[1];
+  .subtitle {
+    @apply mb-[15px] inline-block rounded-[30px]  px-5 py-2 text-sm font-medium tracking-[1px] shadow-[0_4.4px_30px_rgba(19,16,34,0.05)];
+  }
+  .title {
+    @apply mb-5 text-[60px] font-bold;
+    span {
+      @apply text-main-color;
+    }
+  }
+  .content {
+    @apply mb-8;
+  }
+}
+
+.banner-thumb {
+  @apply relative;
+  .main-img {
+    @apply rounded-[300px_300px_0_0];
+  }
+  &:after {
+    @apply absolute bottom-[-25px] left-[-25px] h-full w-full rounded-[300px_300px_0_0] border-[5px] border-solid border-main-color content-[''];
+  }
+  .banner-animate-img {
+    @apply absolute;
+  }
+  .banner-animate-img-1 {
+    @apply left-[-140px];
+  }
+  .banner-animate-img-2 {
+    @apply bottom-[-25px] right-[25px] h-[120px] w-[120px] bg-main-color p-5;
+  }
+  .banner-animate-img-3 {
+    @apply bottom-[-68px] right-[-9px];
+  }
+}
+
+.banner-thumb-2 {
+  @apply relative;
+  .banner-animate-img {
+    @apply absolute;
+  }
+  .main-img-wrap {
+    @apply relative;
+    .banner-animate-img-1 {
+      @apply left-[-140px] z-[1] w-[120px];
+    }
+    .banner-animate-img-2 {
+      @apply right-[-70px] top-[50px] z-[1];
+    }
+    .banner-animate-img-3 {
+      @apply bottom-[100px] left-[-200px] z-[1];
+    }
+  }
+  .banner-animate-img-4 {
+    @apply -right-5 top-0 z-0;
+  }
+  .main-img-wrap {
+    @apply z-[1] ml-40;
+  }
+}
+
+.banner-thumb-3 {
+  @apply relative;
+  .banner-animate-img {
+    @apply absolute;
+  }
+  @apply relative;
+  .banner-animate-img-1 {
+    @apply left-[-50px] top-[30%];
+  }
+  .banner-animate-img-2 {
+    @apply bottom-10 right-[50px];
+  }
+}
+
+.banner-area-left-style {
+  @apply pl-[140px] pt-[100px];
+
+  .animate-img {
+    @apply absolute bottom-[70px] left-[-100px] w-20;
+  }
+  .title {
+    @apply text-[90px] font-semibold;
+  }
+  h3 {
+    @apply font-semibold;
+  }
+  .btn-gray {
+    svg {
+      @apply float-left mr-[5px] pt-0.5 text-base text-main-color;
+    }
+  }
+}
+.banner-left {
+  @apply absolute left-0 top-0 inline-block h-full w-[140px] bg-[rgba(255,255,255,0.05)] text-center;
+  .logo {
+    @apply bg-[rgba(255,255,255,0.05)] px-[15px] py-[35px];
+  }
+  ul {
+    @apply px-0 py-20;
+
+    li {
+      @apply list-none;
+      a {
+        @apply inline-block rounded-[5px] p-[15px];
+        &:hover {
+          @apply bg-main-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,333 @@
+// Layout styles
+@use "_variables.scss" as vars;
+@use "_mixins.scss" as mixins;
+
+// Header
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: vars.$background-color;
+  box-shadow: vars.$shadow-sm;
+  
+  .container {
+    @include mixins.flex(row, space-between, center);
+    padding: vars.$spacing-md vars.$spacing-lg;
+  }
+  
+  &-logo {
+    font-size: 1.5rem;
+    font-weight: vars.$font-weight-bold;
+    color: vars.$primary-color;
+    
+    img {
+      height: 2.5rem;
+    }
+  }
+  
+  &-nav {
+    @include mixins.flex(row, flex-end, center);
+    gap: vars.$spacing-lg;
+    
+    a {
+      color: vars.$text-color;
+      font-weight: vars.$font-weight-medium;
+      
+      &:hover, &.active {
+        color: vars.$primary-color;
+      }
+    }
+    
+    @include mixins.sm {
+      display: none;
+    }
+    
+    @include mixins.md {
+      display: flex;
+    }
+  }
+  
+  &-mobile-toggle {
+    display: block;
+    
+    @include mixins.md {
+      display: none;
+    }
+  }
+}
+
+// Mobile menu
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$background-color;
+  z-index: 200;
+  padding: vars.$spacing-xl;
+  transform: translateX(-100%);
+  @include mixins.transition;
+  
+  &.active {
+    transform: translateX(0);
+  }
+  
+  &-close {
+    position: absolute;
+    top: vars.$spacing-lg;
+    right: vars.$spacing-lg;
+    font-size: 1.5rem;
+  }
+  
+  &-nav {
+    @include mixins.flex(column, flex-start, flex-start);
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-2xl;
+    
+    a {
+      font-size: 1.25rem;
+      font-weight: vars.$font-weight-medium;
+      color: vars.$text-color;
+      
+      &:hover, &.active {
+        color: vars.$primary-color;
+      }
+    }
+  }
+  
+  @include mixins.md {
+    display: none;
+  }
+}
+
+// Footer
+.footer {
+  background-color: vars.$background-color-alt;
+  padding: vars.$spacing-2xl 0;
+  margin-top: vars.$spacing-3xl;
+  
+  .container {
+    @include mixins.flex(column, flex-start, stretch);
+    gap: vars.$spacing-xl;
+    
+    @include mixins.md {
+      @include mixins.flex(row, space-between, flex-start);
+    }
+  }
+  
+  &-logo {
+    font-size: 1.5rem;
+    font-weight: vars.$font-weight-bold;
+    color: vars.$primary-color;
+    margin-bottom: vars.$spacing-md;
+    
+    img {
+      height: 2.5rem;
+    }
+  }
+  
+  &-info {
+    max-width: 300px;
+    
+    p {
+      color: vars.$text-color-light;
+      margin-bottom: vars.$spacing-md;
+    }
+  }
+  
+  &-nav {
+    @include mixins.flex(column, flex-start, flex-start);
+    gap: vars.$spacing-sm;
+    
+    h4 {
+      margin-bottom: vars.$spacing-md;
+      font-size: 1.125rem;
+    }
+    
+    a {
+      color: vars.$text-color-light;
+      
+      &:hover {
+        color: vars.$primary-color;
+      }
+    }
+  }
+  
+  &-social {
+    @include mixins.flex(row, flex-start, center);
+    gap: vars.$spacing-md;
+    margin-top: vars.$spacing-md;
+    
+    a {
+      width: 2rem;
+      height: 2rem;
+      border-radius: vars.$border-radius-full;
+      background-color: vars.$text-color-light;
+      color: vars.$background-color;
+      @include mixins.flex(row, center, center);
+      
+      &:hover {
+        background-color: vars.$primary-color;
+      }
+    }
+  }
+  
+  &-bottom {
+    border-top: 1px solid vars.$border-color;
+    padding-top: vars.$spacing-lg;
+    margin-top: vars.$spacing-xl;
+    @include mixins.flex(column, flex-start, flex-start);
+    gap: vars.$spacing-md;
+    
+    @include mixins.md {
+      @include mixins.flex(row, space-between, center);
+    }
+    
+    &-copyright {
+      color: vars.$text-color-light;
+      font-size: 0.875rem;
+    }
+    
+    &-links {
+      @include mixins.flex(row, flex-end, center);
+      gap: vars.$spacing-md;
+      
+      a {
+        color: vars.$text-color-light;
+        font-size: 0.875rem;
+        
+        &:hover {
+          color: vars.$primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Hero section
+.hero {
+  padding: vars.$spacing-3xl 0;
+  background-color: vars.$background-color-alt;
+  
+  &-gradient {
+    background: linear-gradient(to right, vars.$primary-color, vars.$secondary-color);
+    color: white;
+  }
+  
+  .container {
+    @include mixins.flex(column, center, center);
+    text-align: center;
+    
+    @include mixins.lg {
+      @include mixins.flex(row, space-between, center);
+      text-align: left;
+    }
+  }
+  
+  &-content {
+    max-width: 600px;
+    
+    @include mixins.lg {
+      flex: 1;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: vars.$spacing-lg;
+      
+      @include mixins.lg {
+        font-size: 3.5rem;
+      }
+    }
+    
+    p {
+      font-size: 1.125rem;
+      margin-bottom: vars.$spacing-xl;
+      
+      @include mixins.lg {
+        font-size: 1.25rem;
+      }
+    }
+    
+    .btn {
+      margin-right: vars.$spacing-md;
+      margin-bottom: vars.$spacing-md;
+    }
+  }
+  
+  &-image {
+    margin-top: vars.$spacing-xl;
+    
+    @include mixins.lg {
+      flex: 1;
+      margin-top: 0;
+      margin-left: vars.$spacing-xl;
+    }
+    
+    img {
+      max-width: 100%;
+      border-radius: vars.$border-radius-lg;
+      @include mixins.shadow('lg');
+    }
+  }
+}
+
+// Section
+.section {
+  padding: vars.$spacing-3xl 0;
+  
+  &-title {
+    text-align: center;
+    margin-bottom: vars.$spacing-2xl;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: vars.$spacing-md;
+    }
+    
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: vars.$text-color-light;
+      font-size: 1.125rem;
+    }
+  }
+  
+  &-alt {
+    background-color: vars.$background-color-alt;
+  }
+}
+
+// Grid layouts
+.grid {
+  @include mixins.grid(1, vars.$spacing-lg);
+  
+  @include mixins.sm {
+    @include mixins.grid(2, vars.$spacing-lg);
+  }
+  
+  @include mixins.lg {
+    @include mixins.grid(3, vars.$spacing-lg);
+  }
+  
+  &-2 {
+    @include mixins.grid(1, vars.$spacing-lg);
+    
+    @include mixins.md {
+      @include mixins.grid(2, vars.$spacing-lg);
+    }
+  }
+  
+  &-4 {
+    @include mixins.grid(1, vars.$spacing-lg);
+    
+    @include mixins.sm {
+      @include mixins.grid(2, vars.$spacing-lg);
+    }
+    
+    @include mixins.lg {
+      @include mixins.grid(4, vars.$spacing-lg);
+    }
+  }
+}

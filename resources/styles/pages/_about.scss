@@ -1,0 +1,258 @@
+// About page styles
+@use "../_variables.scss" as vars;
+@use "../_mixins.scss" as mixins;
+
+// About section
+.about {
+  &-intro {
+    @include mixins.lg {
+      @include mixins.flex(row, space-between, center);
+      gap: vars.$spacing-2xl;
+    }
+    
+    &-content {
+      @include mixins.lg {
+        flex: 1;
+      }
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: vars.$spacing-md;
+        color: vars.$primary-color;
+      }
+      
+      p {
+        margin-bottom: vars.$spacing-md;
+      }
+    }
+    
+    &-image {
+      margin-top: vars.$spacing-xl;
+      
+      @include mixins.lg {
+        flex: 1;
+        margin-top: 0;
+      }
+      
+      img {
+        width: 100%;
+        border-radius: vars.$border-radius-lg;
+        @include mixins.shadow('lg');
+      }
+    }
+  }
+}
+
+// Values section
+.values {
+  background-color: vars.$background-color-alt;
+  
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.md {
+      @include mixins.grid(3, vars.$spacing-xl);
+    }
+  }
+  
+  &-item {
+    background-color: vars.$background-color;
+    padding: vars.$spacing-lg;
+    border-radius: vars.$border-radius-lg;
+    @include mixins.shadow('md');
+    text-align: center;
+    
+    &-icon {
+      color: vars.$primary-color;
+      font-size: 2.5rem;
+      margin-bottom: vars.$spacing-md;
+    }
+    
+    h3 {
+      margin-bottom: vars.$spacing-md;
+      font-size: 1.25rem;
+    }
+    
+    p {
+      color: vars.$text-color-light;
+    }
+  }
+}
+
+// Team section
+.team {
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.sm {
+      @include mixins.grid(2, vars.$spacing-xl);
+    }
+    
+    @include mixins.lg {
+      @include mixins.grid(3, vars.$spacing-xl);
+    }
+  }
+  
+  &-member {
+    text-align: center;
+    
+    &-image {
+      width: 10rem;
+      height: 10rem;
+      border-radius: vars.$border-radius-full;
+      margin: 0 auto vars.$spacing-md;
+      overflow: hidden;
+      @include mixins.shadow('md');
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    &-info {
+      h3 {
+        margin-bottom: vars.$spacing-xs;
+        font-size: 1.25rem;
+      }
+      
+      .position {
+        color: vars.$primary-color;
+        font-weight: vars.$font-weight-medium;
+        margin-bottom: vars.$spacing-md;
+      }
+      
+      p {
+        color: vars.$text-color-light;
+      }
+    }
+    
+    &-social {
+      @include mixins.flex(row, center, center);
+      gap: vars.$spacing-sm;
+      margin-top: vars.$spacing-md;
+      
+      a {
+        width: 2rem;
+        height: 2rem;
+        border-radius: vars.$border-radius-full;
+        background-color: vars.$background-color-alt;
+        color: vars.$text-color;
+        @include mixins.flex(row, center, center);
+        
+        &:hover {
+          background-color: vars.$primary-color;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// History section
+.history {
+  &-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background-color: vars.$border-color;
+      transform: translateX(-50%);
+      
+      @include mixins.sm {
+        left: 2rem;
+      }
+    }
+    
+    &-item {
+      position: relative;
+      margin-bottom: vars.$spacing-2xl;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      &-content {
+        position: relative;
+        width: calc(50% - 2rem);
+        background-color: vars.$background-color;
+        padding: vars.$spacing-lg;
+        border-radius: vars.$border-radius-lg;
+        @include mixins.shadow('md');
+        
+        @include mixins.sm {
+          width: calc(100% - 4rem);
+          margin-left: 4rem;
+        }
+        
+        &:before {
+          content: '';
+          position: absolute;
+          top: 1.5rem;
+          width: 1rem;
+          height: 1rem;
+          background-color: vars.$primary-color;
+          border-radius: vars.$border-radius-full;
+        }
+        
+        h3 {
+          margin-bottom: vars.$spacing-sm;
+          font-size: 1.25rem;
+        }
+        
+        .date {
+          color: vars.$primary-color;
+          font-weight: vars.$font-weight-medium;
+          margin-bottom: vars.$spacing-md;
+        }
+        
+        p {
+          color: vars.$text-color;
+        }
+      }
+      
+      &:nth-child(odd) {
+        .history-timeline-item-content {
+          margin-left: auto;
+          
+          &:before {
+            left: -2.5rem;
+          }
+          
+          @include mixins.sm {
+            margin-left: 4rem;
+            
+            &:before {
+              left: -2.5rem;
+            }
+          }
+        }
+      }
+      
+      &:nth-child(even) {
+        .history-timeline-item-content {
+          &:before {
+            right: -2.5rem;
+          }
+          
+          @include mixins.sm {
+            margin-left: 4rem;
+            
+            &:before {
+              left: -2.5rem;
+              right: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

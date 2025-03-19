@@ -1,0 +1,369 @@
+html {
+  @apply overflow-x-hidden font-body-font;
+}
+
+* {
+  @apply box-border outline-none;
+}
+
+body {
+  @apply m-[0px] overflow-x-hidden  font-body-font text-[16px] font-medium leading-[1.7] text-paragraph-color;
+}
+
+h1 {
+  @apply text-[75px] leading-[1.2333333333333333];
+}
+
+h2 {
+  @apply text-[40px] leading-[1.2380952380952381];
+}
+
+h3 {
+  @apply text-[30px] leading-[1.3833333333333333];
+}
+
+h4 {
+  @apply text-[24px] leading-[1.3380952380952381];
+}
+h5 {
+  @apply text-[20px] leading-[1.3380952380952381];
+}
+h6 {
+  @apply text-[16px] leading-[1.2380952380952381];
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-body-font font-semibold text-heading-color;
+}
+
+p {
+  @apply mb-[10px] hyphens-auto text-paragraph-color;
+}
+
+a {
+  @apply text-inherit no-underline transition-all duration-[0.4s] ease-[ease];
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  @apply text-inherit no-underline outline-none;
+}
+a:hover {
+  @apply text-main-color;
+}
+pre {
+  word-break: break-word;
+}
+
+a i {
+  @apply px-[2px] py-0;
+}
+
+img {
+  @apply max-w-full;
+}
+
+button:hover,
+button:active,
+button:focus {
+  @apply outline-none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+select:focus {
+  @apply border border-solid border-[#dddddd] shadow-none outline-none;
+}
+
+.no-gutter.row,
+.no-gutter.container,
+.no-gutter.container-fluid {
+  @apply me-0 ms-0 pe-0 ps-0;
+}
+
+.no-gutter > [class^="col-"] {
+  @apply pe-0 ps-0;
+}
+.no-gutter[class^="col-"] {
+  @apply pe-0 ps-0;
+}
+
+.h-100vh {
+  @apply h-screen;
+}
+
+code {
+  @apply text-[#faa603];
+}
+
+.check-list {
+  @apply m-[0px] list-none p-0;
+  li {
+    @apply relative z-0 block ps-[20px];
+    &:after {
+      @apply absolute left-0 top-0 text-main-color content-["\f105"];
+      font-family: "Font Awesome 5 Free";
+    }
+  }
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  @apply clear-both;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  @apply float-left w-[50%];
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  @apply float-right w-[50%] text-end;
+}
+
+.comment-navigation .nav-previous > a,
+.posts-navigation .nav-previous > a,
+.post-navigation .nav-previous > a,
+.comment-navigation .nav-next > a,
+.posts-navigation .nav-next > a,
+.post-navigation .nav-next > a {
+  @apply transition-all duration-[0.3s] ease-in;
+}
+
+.comment-navigation .nav-previous:hover > a,
+.posts-navigation .nav-previous:hover > a,
+.post-navigation .nav-previous:hover > a,
+.comment-navigation .nav-next:hover > a,
+.posts-navigation .nav-next:hover > a,
+.post-navigation .nav-next:hover > a {
+  @apply text-main-color;
+}
+
+.comment-list li {
+  @apply list-none;
+}
+
+.h-100vh {
+  @apply h-screen;
+}
+
+.position-relative {
+  @apply relative;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+.screen-reader-text {
+  @apply margin-[-1px] h-px w-px overflow-hidden border-0 p-0;
+  word-wrap: normal !important;
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+.screen-reader-text:focus {
+  @apply left-[5px] top-[5px] z-[100000] block h-auto w-auto rounded-[3px] bg-[#f1f1f1] px-[23px] pb-3.5 pt-[15px] font-[bold] text-[15px] text-sm leading-[normal] text-[#21759b] no-underline shadow-[0_0_2px_2px_rgba(0,0,0,0.6)];
+  clip: auto !important;
+  clip-path: none;
+}
+
+#content[tabindex="-1"]:focus {
+  @apply outline-none;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+  @apply float-left clear-both mr-5;
+}
+
+.alignright {
+  @apply float-right clear-both ml-5;
+}
+
+.aligncenter {
+  @apply clear-both mx-auto mb-[1.75em] mt-0 block;
+}
+
+.alignfull {
+  @apply mx-0 my-[1.5em] max-w-full;
+}
+
+.alignwide {
+  @apply max-w-[1100px];
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  @apply table table-fixed content-[""];
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  @apply clear-both;
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+
+.sticky {
+  @apply block;
+}
+
+.updated:not(.published) {
+  @apply hidden;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  @apply mb-0 ml-0 border-[none] p-0;
+}
+
+embed,
+iframe,
+object {
+  @apply max-w-full;
+}
+
+.custom-logo-link {
+  @apply inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+
+.wp-caption {
+  @apply clear-both mb-[1.5em] max-w-full;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  @apply mx-auto block;
+}
+
+.wp-caption .wp-caption-text {
+  @apply mx-0 my-[0.8075em];
+}
+
+.wp-caption-text {
+  @apply text-center;
+}
+
+/*----------------------------------------
+    # Unit test
+------------------------------------------*/
+
+.wp-link-pages a {
+  @apply mx-[5px] my-0 transition-all duration-[0.3s] ease-in;
+}
+
+.wp-link-pages {
+  @apply mb-[30px] mt-[25px];
+}
+
+.wp-link-pages span,
+.wp-link-pages a {
+  @apply inline-block border border-solid border-[#e2e2e2] px-[15px] py-[5px];
+}
+
+.wp-link-pages .current,
+.wp-link-pages a:hover {
+  @apply border-main-color bg-main-color text-white;
+}
+
+.wp-link-pages span:first-child {
+  @apply me-[5px];
+}
+
+dl,
+ol,
+ul {
+  @apply ps-[17px];
+}
+
+.post-password-form input {
+  @apply block h-[50px] rounded-[3px] border border-solid border-[#e2e2e2] px-5 py-0;
+}
+
+.post-password-form label {
+  @apply font-semibold text-[#333333];
+}
+
+.post-password-form input[type="submit"] {
+  @apply h-[50px] w-[100px] cursor-pointer border-[none] bg-main-color text-[15px] font-semibold tracking-[1px] text-white transition-all duration-[0.3s] ease-in;
+}
+
+.post-password-form input[type="submit"]:hover {
+  @apply bg-[#121A2F];
+}
+
+.footer-widget .table td,
+.footer-widget .table th {
+  padding: 0.5rem !important;
+}
+
+.media {
+  @apply flex items-start;
+}
+.media-body {
+  @apply flex-1;
+}
+
+.custom-gutters-10 > .col,
+.custom-gutters-10 > [class*="col-"] {
+  @apply px-[5px];
+}
+
+@media all and (min-width: 1200px) {
+  .no-lg-gutters > .col,
+  .no-lg-gutters > [class*="col-"] {
+    @apply pe-0 ps-0;
+  }
+}

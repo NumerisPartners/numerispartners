@@ -1,0 +1,211 @@
+/*----------------------------------------------
+    # color schemes style
+----------------------------------------------*/
+
+.pink-style {
+  --main-color: #ff00ea;
+}
+.pink-style .btn-base {
+  @apply bg-grd-four;
+}
+.pink-style .btn:after {
+  @apply bg-grd-five;
+}
+.pink-style .btn-border-base {
+  @apply text-main-color;
+}
+.pink-style .section-title .sub-title {
+  @apply rounded-none bg-transparent p-0 font-semibold uppercase text-main-color shadow-none;
+}
+.pink-style .single-team-inner .team-social-inner {
+  @apply bg-main-color;
+}
+.pink-style .single-team-inner .team-social-inner a {
+  @apply text-white;
+}
+
+.red-style {
+  @apply bg-[#021638];
+  --main-color: #e94057;
+}
+
+.red-style .section-title .sub-title {
+  @apply text-lg tracking-[4px];
+}
+.red-style .btn-gray {
+  @apply  bg-opacity-10 text-white shadow-lg hover:text-white;
+}
+.red-style .bg-gray {
+  @apply  bg-opacity-10 shadow-lg;
+}
+.red-style .border-bottom-2 {
+  @apply border-b-2 border-solid border-b-[rgba(255,255,255,0.3)];
+}
+.red-style .border-tt {
+  @apply border-2 border-solid border-[#263e6b];
+}
+.red-style .single-input-inner input::placeholder,
+.red-style .single-input-inner textarea::placeholder {
+  @apply text-white;
+}
+.red-style .single-service-inner.bg-gray:hover {
+  @apply ;
+}
+.red-style .single-service-inner.bg-gray:hover .details h5 {
+  @apply text-heading-color;
+}
+.red-style .single-service-inner.bg-gray:hover .details p {
+  @apply text-heading-color;
+}
+.red-style .single-pricing-inner.bg-gray.price-active,
+.red-style .single-pricing-inner.bg-gray:hover {
+  @apply bg-main-color;
+}
+.red-style .single-pricing-inner.bg-gray.price-active .btn,
+.red-style .single-pricing-inner.bg-gray:hover .btn {
+  @apply  text-main-color !important;
+}
+@media all and (max-width: 1599px) {
+  .red-style .banner-area-left-style .title {
+    @apply text-[70px];
+  }
+  .red-style .banner-area-left-style {
+    @apply py-5;
+  }
+}
+@media all and (max-width: 1199px) {
+  .red-style .banner-left {
+    @apply w-[110px];
+  }
+}
+
+@media all and (max-width: 991px) {
+  .red-style .banner-area-left-style .animate-img {
+    @apply hidden;
+  }
+  .red-style .banner-area-left-style {
+    @apply pt-[30px];
+  }
+  .red-style .banner-area-left-style .title {
+    @apply text-[40px];
+  }
+  .red-style .banner-area-left-style h3 {
+    @apply text-lg;
+  }
+  .red-style .banner-area-left-style .media h2 {
+    @apply text-2xl;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .red-style .banner-left {
+    @apply w-[65px];
+  }
+  .red-style .banner-left .logo {
+    @apply  bg-opacity-5 px-[15px] py-5;
+  }
+  .red-style .banner-left ul {
+    @apply px-0 py-5;
+  }
+  .red-style .banner-left ul li a {
+    @apply p-2.5;
+  }
+  .red-style .banner-area-left-style {
+    @apply pb-5 pl-[70px];
+  }
+  .red-style .banner-left ul li img {
+    @apply w-[23px];
+  }
+  .red-style .banner-area-left-style .title {
+    @apply text-3xl;
+  }
+  .red-style .banner-area-left-style h3 {
+    @apply text-[15px];
+  }
+  .red-style .banner-area-left-style .btn {
+    @apply h-[45px] px-[15px] py-0 text-xs leading-[45px];
+  }
+  .red-style .banner-area-left-style .btn svg {
+    @apply mt-[17px] text-[13px];
+  }
+  .red-style .banner-area-left-style .media img {
+    @apply w-[45px];
+  }
+}
+
+.yellow-style {
+  --main-color: #829124;
+}
+.yellow-style .btn-border-base {
+  @apply text-black !important;
+}
+.yellow-style .section-title .sub-title {
+  @apply rounded-none bg-transparent p-0 font-semibold uppercase text-main-color shadow-none;
+}
+.yellow-style .single-team-inner .team-social-inner {
+  @apply bg-main-color;
+}
+.yellow-style .single-team-inner .team-social-inner a {
+  @apply text-white;
+}
+
+.yellow-style .btn-base {
+  @apply text-white !important;
+}
+
+.purple-style {
+  --main-color: #6d18ef;
+}
+.purple-style .bg-black-ico {
+  @apply bg-[#050231] !important;
+}
+.purple-style .bg-black-2-ico {
+  @apply bg-[#160443] !important;
+}
+.purple-style .bg-white-4 {
+  @apply bg-opacity-10;
+}
+.purple-style .btn-base {
+  @apply bg-grd-six;
+}
+.purple-style .bg-base-9 {
+  @apply bg-grd-six;
+}
+.purple-style .btn:after {
+  @apply bg-grd-eight;
+}
+.purple-style .btn-border-base {
+  @apply text-main-color;
+}
+.purple-style .section-title .sub-title {
+  @apply rounded-none bg-transparent p-0 font-semibold uppercase text-white shadow-none;
+}
+.purple-style .single-team-inner .team-social-inner {
+  @apply bg-main-color;
+}
+.purple-style .single-team-inner .team-social-inner a {
+  @apply text-white;
+}
+
+.purple-style .section-title .sub-title.line-double {
+  @apply pl-[55px] pr-0 !important;
+}
+
+.sky-blue-style {
+  --main-color: #50af9b;
+}
+.sky-blue-style .btn-border-base {
+  @apply text-main-color;
+  &:hover {
+    @apply text-white !important;
+  }
+}
+.sky-blue-style .section-title .sub-title {
+  @apply rounded-none bg-transparent p-0 font-semibold uppercase text-main-color shadow-none;
+}
+.sky-blue-style .single-team-inner .team-social-inner {
+  @apply bg-main-color;
+}
+.sky-blue-style .single-team-inner .team-social-inner a {
+  @apply text-white;
+}

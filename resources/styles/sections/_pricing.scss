@@ -1,0 +1,72 @@
+/*----------------------------------------------
+    # pricing style
+----------------------------------------------*/
+.single-pricing-inner {
+  @apply mb-[30px]  p-12 shadow-[0px_4.8px_20px_rgba(19,16,34,0.1)] transition-all duration-[0.4s] ease-[ease];
+  h2 {
+    @apply transition-all duration-[0.4s] ease-[ease];
+    sub {
+      @apply bottom-px text-base;
+    }
+  }
+  h5 {
+    @apply mb-8 transition-all duration-[0.4s] ease-[ease];
+  }
+  ul {
+    @apply p-0;
+    li {
+      @apply mb-[15px] list-none text-heading-color transition-all duration-[0.4s] ease-[ease];
+      i,
+      svg {
+        @apply mr-2.5;
+      }
+      &.hide {
+        @apply text-paragraph-color;
+      }
+    }
+  }
+  .btn {
+    @apply mt-7;
+  }
+  &.price-active,
+  &:hover {
+    @apply bg-[#f8f9fc] shadow-none;
+    .btn {
+      @apply border-main-color bg-main-color leading-[50px];
+      color: #fff !important;
+    }
+  }
+  &.style-3 {
+    @apply border border-solid border-[#E3E3E3] shadow-none;
+
+    h5 {
+      @apply mb-8 inline-block bg-[#f8f9fc] px-5 py-3 transition-all duration-[0.4s] ease-[ease];
+    }
+    &.price-active,
+    &:hover {
+      @apply bg-main-color;
+      h2 {
+        @apply text-white;
+      }
+      h5 {
+        @apply bg-[rgba(255,255,255,0.1)] text-white;
+      }
+      ul {
+        @apply p-0;
+        li {
+          @apply text-white;
+          i,
+          svg {
+            @apply mr-2.5;
+          }
+          &.hide {
+            @apply text-[rgba(255,255,255,0.7)];
+          }
+        }
+      }
+      .btn {
+        @apply  text-main-color !important;
+      }
+    }
+  }
+}

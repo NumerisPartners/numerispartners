@@ -1,0 +1,23 @@
+// Main SCSS file
+// Import variables, mixins, and other partials
+
+// Variables
+@import 'variables';
+
+// Mixins
+@import 'mixins';
+
+// Base styles
+@import 'base';
+
+// Components
+@import 'components';
+
+// Layout
+@import 'layout';
+
+// Pages
+@import 'pages/home';
+@import 'pages/services';
+@import 'pages/about';
+@import 'pages/contact';

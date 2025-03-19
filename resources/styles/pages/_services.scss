@@ -1,0 +1,246 @@
+// Services page styles
+@use "../_variables.scss" as vars;
+@use "../_mixins.scss" as mixins;
+
+// Service list
+.service-list {
+  &-item {
+    margin-bottom: vars.$spacing-3xl;
+    
+    @include mixins.lg {
+      @include mixins.flex(row, space-between, center);
+      gap: vars.$spacing-2xl;
+    }
+    
+    &:nth-child(even) {
+      @include mixins.lg {
+        flex-direction: row-reverse;
+      }
+    }
+    
+    &-content {
+      @include mixins.lg {
+        flex: 1;
+      }
+      
+      h3 {
+        font-size: 1.75rem;
+        margin-bottom: vars.$spacing-md;
+        color: vars.$primary-color;
+      }
+      
+      p {
+        margin-bottom: vars.$spacing-lg;
+        color: vars.$text-color;
+      }
+      
+      ul {
+        margin-bottom: vars.$spacing-lg;
+        
+        li {
+          margin-bottom: vars.$spacing-sm;
+          position: relative;
+          padding-left: vars.$spacing-lg;
+          
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: vars.$border-radius-full;
+            background-color: vars.$primary-color;
+          }
+        }
+      }
+    }
+    
+    &-image {
+      margin-top: vars.$spacing-lg;
+      margin-bottom: vars.$spacing-lg;
+      
+      @include mixins.lg {
+        flex: 1;
+        margin: 0;
+      }
+      
+      img {
+        width: 100%;
+        border-radius: vars.$border-radius-lg;
+        @include mixins.shadow('lg');
+      }
+    }
+  }
+}
+
+// Process section
+.process {
+  background-color: vars.$background-color-alt;
+  
+  &-steps {
+    counter-reset: process-counter;
+    
+    &-item {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: vars.$spacing-xl;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      &:before {
+        counter-increment: process-counter;
+        content: counter(process-counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        background-color: vars.$primary-color;
+        color: white;
+        border-radius: vars.$border-radius-full;
+        @include mixins.flex(row, center, center);
+        font-weight: vars.$font-weight-bold;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 2rem;
+        bottom: -2rem;
+        width: 1px;
+        background-color: vars.$border-color;
+      }
+      
+      &:last-child:after {
+        display: none;
+      }
+      
+      h3 {
+        margin-bottom: vars.$spacing-sm;
+        font-size: 1.25rem;
+      }
+      
+      p {
+        color: vars.$text-color-light;
+      }
+    }
+  }
+}
+
+// Pricing section
+.pricing {
+  &-grid {
+    @include mixins.grid(1, vars.$spacing-xl);
+    
+    @include mixins.md {
+      @include mixins.grid(3, vars.$spacing-xl);
+    }
+  }
+  
+  &-plan {
+    background-color: vars.$background-color;
+    border-radius: vars.$border-radius-lg;
+    overflow: hidden;
+    @include mixins.shadow('md');
+    @include mixins.transition;
+    
+    &:hover {
+      transform: translateY(-5px);
+      @include mixins.shadow('lg');
+    }
+    
+    &-header {
+      padding: vars.$spacing-lg;
+      background-color: vars.$background-color-alt;
+      text-align: center;
+      
+      h3 {
+        margin-bottom: vars.$spacing-sm;
+        font-size: 1.25rem;
+      }
+      
+      .price {
+        font-size: 2.5rem;
+        font-weight: vars.$font-weight-bold;
+        color: vars.$primary-color;
+        margin-bottom: vars.$spacing-xs;
+        
+        .currency {
+          font-size: 1rem;
+          vertical-align: super;
+        }
+        
+        .period {
+          font-size: 0.875rem;
+          color: vars.$text-color-light;
+          font-weight: vars.$font-weight-normal;
+        }
+      }
+    }
+    
+    &-features {
+      padding: vars.$spacing-lg;
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          padding: vars.$spacing-sm 0;
+          border-bottom: 1px solid vars.$border-color;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+          
+          &.included {
+            color: vars.$text-color;
+            
+            &:before {
+              content: '✓';
+              color: green;
+              margin-right: vars.$spacing-sm;
+            }
+          }
+          
+          &.excluded {
+            color: vars.$text-color-light;
+            
+            &:before {
+              content: '✕';
+              color: red;
+              margin-right: vars.$spacing-sm;
+            }
+          }
+        }
+      }
+    }
+    
+    &-footer {
+      padding: vars.$spacing-lg;
+      text-align: center;
+    }
+    
+    &-popular {
+      position: relative;
+      border: 2px solid vars.$primary-color;
+      
+      &:before {
+        content: 'Populaire';
+        position: absolute;
+        top: 0;
+        right: vars.$spacing-lg;
+        background-color: vars.$primary-color;
+        color: white;
+        padding: vars.$spacing-xs vars.$spacing-sm;
+        font-size: 0.75rem;
+        border-radius: 0 0 vars.$border-radius-sm vars.$border-radius-sm;
+      }
+    }
+  }
+}

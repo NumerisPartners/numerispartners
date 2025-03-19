@@ -1,0 +1,74 @@
+/*
+Theme Name: AgileTech
+Author: wowtheme7
+Author URI: http://wowtheme7.com
+Description: AglieTech - IT Solutions & Technology Tailwind CSS Template
+Version: 1.0.0
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Global
+    ## Global
+    ## Mixins
+    ## Theme
+    ## Variables
+    ## Common
+
+# Sections
+    ## Nav Bar
+    ## Banner
+    ## Brand Area
+    ## Footer
+    ## Widgets
+
+# Elements
+    ## accordion
+    ## filter
+    ## apartment
+    ## blog
+    ## city
+    ## feature
+    ## gallery
+    ## intro
+    ## main-search
+    ## pricing
+    ## service
+    ## team
+    ## user-list
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Root Styles
+--------------------------------------------------------------*/
+
+// Importation des styles globaux
+@import 'global/layout';
+@import 'global/global';
+@import 'global/color-scheme';
+@import 'global/common';
+@import 'global/tailwind-utilities';
+
+// Importation des sections
+@import 'sections/navbar';
+@import 'sections/banner';
+@import 'sections/section-style';
+@import 'sections/section-title';
+@import 'sections/home-new';
+@import 'sections/service';
+@import 'sections/team';
+@import 'sections/blog';
+@import 'sections/footer';
+@import 'sections/widgets';
+@import 'sections/about';
+@import 'sections/project';
+@import 'sections/work-process';
+@import 'sections/pricing';
+@import 'sections/case-study';
+@import 'sections/content';
+@import 'sections/testimonial';
+@import 'sections/search';
+
+// Import responsive styles
+@import "responsive";

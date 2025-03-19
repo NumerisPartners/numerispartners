@@ -1,0 +1,96 @@
+// Base styles
+
+// Reset and normalize
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base, 'Inter', system-ui, -apple-system, sans-serif);
+  font-size: var(--font-size-base, 1rem);
+  line-height: var(--line-height-base, 1.5);
+  color: var(--text-color, #1f2937);
+  background-color: var(--background-color, #ffffff);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-md, 1.5rem);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-h1, 2.5rem);
+}
+
+h2 {
+  font-size: var(--font-size-h2, 2rem);
+}
+
+h3 {
+  font-size: var(--font-size-h3, 1.75rem);
+}
+
+h4 {
+  font-size: var(--font-size-h4, 1.5rem);
+}
+
+h5 {
+  font-size: var(--font-size-h5, 1.25rem);
+}
+
+h6 {
+  font-size: var(--font-size-h6, 1rem);
+}
+
+p {
+  margin-bottom: var(--spacing-md, 1.5rem);
+}
+
+a {
+  color: var(--primary-color, #3498db);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--primary-color-dark, #2e6da4);
+  }
+}
+
+ul, ol {
+  margin-bottom: var(--spacing-md, 1.5rem);
+  padding-left: var(--spacing-xl, 3rem);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md, 1.5rem);
+}
