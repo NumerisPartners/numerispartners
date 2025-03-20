@@ -163,6 +163,16 @@ body {
   margin-left: var(--spacing-3xl, 4rem);
 }
 
+.py-16 {
+  padding-top: var(--spacing-3xl, 4rem);
+  padding-bottom: var(--spacing-3xl, 4rem);
+}
+
+.px-16 {
+  padding-left: var(--spacing-3xl, 4rem);
+  padding-right: var(--spacing-3xl, 4rem);
+}
+
 .alert {
   padding: var(--spacing-md, 1rem) var(--spacing-lg, 1.5rem);
   border-radius: var(--border-radius-md, 0.25rem);
@@ -339,8 +349,14 @@ body {
 
 .breadcrumb-area .page-list li {
   padding-left: 0;
+  margin: 0;
 }
 
 .breadcrumb-area .page-list li:after {
   content: none;
+}
+
+.breadcrumb-area .page-list li svg {
+  width: 16px;
+  height: 16px;
 }

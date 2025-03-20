@@ -5,16 +5,16 @@
 @section('content')
    <!-- page title start -->
    <x-breadcrumb title="Nos Services" />
-    <!-- <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold mb-4">Nos Services</h1>
-            <p class="text-xl max-w-3xl mx-auto">Découvrez notre gamme complète de services digitaux conçus pour propulser votre entreprise vers de nouveaux sommets.</p>
+    <section class="py-16 ">
+        <div class="flex flex-col items-center justify-center mx-auto px-4 text-center">
+            <p class="text-3xl font-bold max-w-2xl mx-auto">Découvrez notre gamme complète de services digitaux conçus pour propulser votre entreprise vers de nouveaux sommets.</p>
         </div>
-    </section> -->
+    </section>
 
     <!-- Services Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
+            @include('pages.services.partials.our-services')
             <!-- Web Development -->
             <div id="web" class="mb-16 scroll-mt-20">
                 <div class="flex flex-col md:flex-row items-center">
@@ -175,44 +175,6 @@
 
     <!-- Process Section -->
      @include('pages.services.partials.our-process')
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Notre Processus</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Nous suivons une méthodologie éprouvée pour garantir le succès de chaque projet.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
-                    <h3 class="text-xl font-semibold mb-2">Découverte</h3>
-                    <p class="text-gray-600">Nous analysons vos besoins, objectifs et contraintes pour comprendre parfaitement votre projet.</p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
-                    <h3 class="text-xl font-semibold mb-2">Conception</h3>
-                    <p class="text-gray-600">Nous élaborons une solution sur mesure avec des maquettes et prototypes pour validation.</p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
-                    <h3 class="text-xl font-semibold mb-2">Développement</h3>
-                    <p class="text-gray-600">Notre équipe développe votre solution avec des technologies modernes et performantes.</p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
-                    <h3 class="text-xl font-semibold mb-2">Livraison & Support</h3>
-                    <p class="text-gray-600">Nous déployons votre solution et assurons un suivi continu pour garantir son succès.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     @include('components.cta-section')

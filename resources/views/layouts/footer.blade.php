@@ -54,7 +54,7 @@
 
             <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
                <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                  <h4 class="widget-title">Liens rapides</h4>
+                  <h2 class="widget-title">Liens rapides</h2>
                   <ul>
                     <li><a href="{{ route('home') }}"><i class="fas fa-arrow-right"></i> Accueil</a></li>
                     <li><a href="{{ route('services') }}"><i class="fas fa-arrow-right"></i> Services</a></li>
@@ -66,7 +66,7 @@
 
             <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
                <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                  <h4 class="widget-title">Nos Services</h4>
+                  <h2 class="widget-title">Nos Services</h2>
                   <ul>
                      <li><a href="service.html"><i class="fas fa-arrow-right"></i> Ui Design</a></li>
                      <li><a href="service.html"><i class="fas fa-arrow-right"></i> Web design</a></li>
@@ -74,41 +74,6 @@
                      <li><a href="service.html"><i class="fas fa-arrow-right"></i> Video Editing</a></li>
                      <li><a href="service.html"><i class="fas fa-arrow-right"></i> Pc Repairs</a></li>
                      <li><a href="service.html"><i class="fas fa-arrow-right"></i> Web Development</a></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
-               <div class="widget widget-recent-post wow animated fadeInUp" data-wow-duration="0.8s"
-                  data-wow-delay="0.9s">
-                  <h4 class="widget-title">Recent Blog</h4>
-                  <ul>
-                     <li>
-                        <div class="media">
-                           <div class="media-left">
-                              <img src="./images/widget/1.png" alt="blog">
-                           </div>
-                           <div class="media-body self-center">
-                              <div class="post-info mb-[8px]"><i class="far fa-calendar-alt"></i><span>january 11,
-                                    2023</span></div>
-                              <h6 class="title mb-0"><a href="blog-details.html">Social Media For Promote Business.</a>
-                              </h6>
-                           </div>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="media">
-                           <div class="media-left">
-                              <img src="./images/widget/2.png" alt="blog">
-                           </div>
-                           <div class="media-body self-center">
-                              <div class="post-info mb-[8px]"><i class="far fa-calendar-alt"></i><span>january 11,
-                                    2023</span></div>
-                              <h6 class="title mb-0">
-                                 <a href="blog-details.html">Marketing For Base market watch</a>
-                              </h6>
-                           </div>
-                        </div>
-                     </li>
                   </ul>
                </div>
             </div>

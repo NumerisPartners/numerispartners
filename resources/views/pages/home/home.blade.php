@@ -16,7 +16,7 @@
     @include('components.cta-section')
 
     <!-- Why Choose Us Section -->
-    @include('pages.home.partials.choose')
+    @include('pages.about.partials.choose')
 
   
 @endsection

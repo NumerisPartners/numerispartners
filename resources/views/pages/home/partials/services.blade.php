@@ -3,7 +3,7 @@
       <img class="position-bottom-left animate-topImageBounce" src="./images/icon/4.png" alt="img">
       <div class="container">
          <div class="section-title text-center wow animated fadeInUp" data-wow-duration="0.8s">
-            <h6 class="sub-title">Designing for the future </h6>
+            <p class="sub-title">Une digital Factory dopée à IA </p>
             <h2 class="title"><span>Votre Partenaire en </span>Transformation Digitale</h2>
             <p>Transformez votre entreprise avec nos services numériques sur mesure.</p>
          </div>
@@ -14,7 +14,7 @@
                      <img src="./images/service-icon/1.png" alt="img">
                   </div>
                   <div class="details">
-                     <h5><a href="service-details.html">Applications Mobiles</a></h5>
+                     <h3 class="text-lg"><a href="service-details.html">Applications Mobiles</a></h3>
                      <p>Applications iOS et Android performantes et intuitives pour vos utilisateurs</p>
                      <a href="service-details.html">
                         Get Services
@@ -35,7 +35,7 @@
                      <img src="./images/service-icon/2.png" alt="img">
                   </div>
                   <div class="details">
-                     <h5><a href="service-details.html">Développement Web</a></h5>
+                     <h3><a href="service-details.html">Développement Web</a></h3>
                      <p>Création de sites web performants et intuitifs pour vos utilisateurs</p>
                      <a href="service-details.html">
                         Get Services
@@ -56,7 +56,7 @@
                      <img src="./images/service-icon/3.png" alt="img">
                   </div>
                   <div class="details">
-                     <h5><a href="service-details.html">Conseil Digital</a></h5>
+                     <h3><a href="service-details.html">Conseil Digital</a></h3>
                      <p>Stratégies digitales et accompagnement pour votre transformation numérique.</p>
                      <a href="service-details.html">
                         Get Services

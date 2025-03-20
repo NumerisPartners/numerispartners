@@ -1,63 +1,39 @@
- <!-- work-process-area start -->
- <div class="work-process-area pd-top-100">
-      <div class="container">
-         <div class="section-title text-center wow animated fadeInUp" data-wow-duration="0.8s">
-            <h6 class="sub-title">OUR SIMPLE PROCESS</h6>
-            <h2 class="title">World <span>Best Step</span> Our It Process</h2>
-         </div>
-         <div class="row">
-            <div class="custom-lg:w-3/12 custom-sm:w-1/2">
-               <div class="single-work-process-inner wow animated fadeInUp" data-wow-duration="0.8s">
-                  <div class="thumb mb-[16px]">
-                     <img src="{{ asset('images/icon/9.svg') }}" alt="img">
-                  </div>
-                  <div class="details">
-                     <p class="process-count">Work 01</p>
-                     <h5 class="!mb-[16px]">Software Research</h5>
-                     <p class="content">Research ipsum dolor sit consec tetur sed diam in the aliquam tempor</p>
-                  </div>
-               </div>
+<section class="py-16 bg-gray-50">
+   <div class="container mx-auto px-4">
+      <div class="section-title mb-12 flex flex-col items-center justify-center">
+            <p class="sub-title">OUR SIMPLE PROCESS</p>
+            <h2 class="title">Notre <span>Processus</span> </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Nous suivons une méthodologie éprouvée pour garantir le succès de chaque projet.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+               <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+               <h3 class="text-xl font-semibold mb-2">Découverte</h3>
+               <p class="text-gray-600">Nous analysons vos besoins, objectifs et contraintes pour comprendre parfaitement votre projet.</p>
             </div>
-            <div class="custom-lg:w-3/12 custom-sm:w-1/2">
-               <div class="single-work-process-inner wow animated fadeInUp" data-wow-duration="0.8s"
-                  data-wow-delay="0.3s">
-                  <div class="thumb mb-[16px]">
-                     <img src="{{ asset('images/icon/10.svg') }}" alt="img">
-                  </div>
-                  <div class="details">
-                     <p class="process-count">Work 02</p>
-                     <h5 class="!mb-[16px]">Create Programs</h5>
-                     <p class="content">Create ipsum dolor sit consec tetur sed diam in the aliquam tempor</p>
-                  </div>
-               </div>
+            
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+               <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+               <h3 class="text-xl font-semibold mb-2">Conception</h3>
+               <p class="text-gray-600">Nous élaborons une solution sur mesure avec des maquettes et prototypes pour validation.</p>
             </div>
-            <div class="custom-lg:w-3/12 custom-sm:w-1/2">
-               <div class="single-work-process-inner wow animated fadeInUp" data-wow-duration="0.8s"
-                  data-wow-delay="0.6s">
-                  <div class="thumb mb-[16px]">
-                     <img src="{{ asset('images/icon/11.svg') }}" alt="img">
-                  </div>
-                  <div class="details">
-                     <p class="process-count">Work 03</p>
-                     <h5 class="!mb-[16px]">Develope Software</h5>
-                     <p class="content">Develope ipsum dolor sit consec tetur sed diam in the aliquam tempor</p>
-                  </div>
-               </div>
+            
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+               <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+               <h3 class="text-xl font-semibold mb-2">Développement</h3>
+               <p class="text-gray-600">Notre équipe développe votre solution avec des technologies modernes et performantes.</p>
             </div>
-            <div class="custom-lg:w-3/12 custom-sm:w-1/2">
-               <div class="single-work-process-inner wow animated fadeInUp" data-wow-duration="0.8s"
-                  data-wow-delay="0.9s">
-                  <div class="thumb mb-[16px]">
-                     <img src="{{ asset('images/icon/12.svg') }}" alt="img">
-                  </div>
-                  <div class="details">
-                     <p class="process-count">Work 04</p>
-                     <h5 class="!mb-[16px]">Shop software</h5>
-                     <p class="content">Shop ipsum dolor sit consec tetur Malesuada sed diam in the aliquam tempor</p>
-                  </div>
-               </div>
+            
+            <!-- Step 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+               <div class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
+               <h3 class="text-xl font-semibold mb-2">Livraison & Support</h3>
+               <p class="text-gray-600">Nous déployons votre solution et assurons un suivi continu pour garantir son succès.</p>
             </div>
-         </div>
       </div>
    </div>
-   <!-- work-process-area end -->
+</section>
