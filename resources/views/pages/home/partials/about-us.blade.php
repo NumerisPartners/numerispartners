@@ -12,9 +12,9 @@
         <div class="custom-md:w-1/2 wow animated fadeInRight" data-wow-duration="0.8s"
             data-wow-delay="0.3s">
             <div class="section-title text-left mt-[48px] custom-md:mt-0">
-                <p class="sub-title m-0">Notre histoire</p>
-                <h2 class="title">Transforming Businesses Through <span>Software</span> Innovation</h2>
-                <p class="content !mb-[24px] custom-lg:!mb-[48px]"><strong>Heuristik Partners</strong> est une société de conseil en Stratégie, 
+                <p class="sub-title m-0 text-left">Notre histoire</p>
+                <h2 class="title text-left">Transforming Businesses Through <span>Software</span> Innovation</h2>
+                <p class="content !mb-[24px] custom-lg:!mb-[48px] text-left"><strong>Heuristik Partners</strong> est une société de conseil en Stratégie, 
                     Leadership et en Transformation digitale et data.</p>
                 <div class="media shadow-2xl p-[16px] border-radius-5 mb-[16px]">
                     <div class="media-left me-[16px] bg-blue-50 p-4 text-white rounded-md flex items-center justify-center">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="media-body">
                     <div class="single-progressbar">
-                        <p class="text-2xl font-semibold">Conseil en Stratégie et Leadership</p>
+                        <p class="text-2xl font-semibold text-left">Conseil en Stratégie et Leadership</p>
                         <div class="skill">
                             <div style="width: 90%" class="skill-bar skill1 wow slideInLeft animated">
                             </div>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="media-body">
                     <div class="single-progressbar">
-                        <p class="text-2xl font-semibold">Transformation digitale</p>
+                        <p class="text-2xl font-semibold text-left">Transformation digitale</p>
                         <div class="skill">
                             <div style="width: 80%" class="skill-bar skill1 wow slideInLeft animated">
                             </div>
@@ -59,7 +59,7 @@
                     </div>  
                     <div class="media-body">
                     <div class="single-progressbar">
-                        <p class="text-2xl font-semibold">Data  et Ingénierie</p>
+                        <p class="text-2xl font-semibold text-left">Data  et Ingénierie</p>
                         <div class="skill">
                             <div style="width: 80%" class="skill-bar skill1 wow slideInLeft animated">
                             </div>

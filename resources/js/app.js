@@ -1,7 +1,9 @@
 require('./bootstrap');
 
-const Alpine = require('alpinejs');
+// Alpine.js est maintenant chargé via CDN
 
-window.Alpine = Alpine;
+// Import du script de menu mobile
+require('./menu');
 
-Alpine.start();
+// Import du script de mode sombre
+require('./dark-mode');

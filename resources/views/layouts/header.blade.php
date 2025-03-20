@@ -10,12 +10,37 @@
         </button>
         </div>
         <div class="logo">
-        <a href="index.html"><img src="./images/logo.png" alt="img"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" alt="img"></a>
         </div>
         <div class="nav-right-part nav-right-part-mobile">
-        <a class="search-bar-btn" href="index.html">
-            <i class="fa fa-search"></i>
-        </a>
+           <!-- Theme Toggle pour mobile -->
+           <div x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" class="mr-4 block custom-md:hidden">
+                <button 
+                    @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); 
+                            if(darkMode) { document.documentElement.classList.add('dark') } 
+                            else { document.documentElement.classList.remove('dark') }" 
+                    class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:bg-gray-700"
+                    :class="{ 'bg-gray-600': darkMode }"
+                    role="switch"
+                    :aria-checked="darkMode"
+                >
+                    <span class="sr-only">Toggle theme</span>
+                    <span
+                        aria-hidden="true"
+                        class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center"
+                        :class="{ 'translate-x-5': darkMode, 'translate-x-0': !darkMode }"
+                    >
+                        <!-- Sun icon -->
+                        <svg x-show="!darkMode" class="h-3 w-3 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon icon -->
+                        <svg x-show="darkMode" class="h-3 w-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
         </div>
         <div class="collapse navbar-collapse" id="itech_main_menu">
         <ul class="navbar-nav menu-open custom-md:!text-center custom-md:ps-[48px]">
@@ -39,10 +64,39 @@
         </ul>
         </div>
         <div class="nav-right-part nav-right-part-desktop custom-md:inline-flex items-center">
+            <!-- Theme Toggle pour desktop -->
+            <div x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" class="mr-4 hidden custom-md:block">
+                <button 
+                    @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); 
+                            if(darkMode) { document.documentElement.classList.add('dark') } 
+                            else { document.documentElement.classList.remove('dark') }" 
+                    class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:bg-gray-700"
+                    :class="{ 'bg-gray-600': darkMode }"
+                    role="switch"
+                    :aria-checked="darkMode"
+                >
+                    <span class="sr-only">Toggle theme</span>
+                    <span
+                        aria-hidden="true"
+                        class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center"
+                        :class="{ 'translate-x-5': darkMode, 'translate-x-0': !darkMode }"
+                    >
+                        <!-- Sun icon -->
+                        <svg x-show="!darkMode" class="h-3 w-3 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon icon -->
+                        <svg x-show="darkMode" class="h-3 w-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            
             @guest
                 <a href="{{ route('login') }}" class="btn btn-border-base me-2">
                     <svg class="size-6 fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V9m3 0V5.25A2.25 2.25 0 0 1 19.5 3h-6a2.25 2.25 0 0 1-2.25 2.25v13.5A2.25 2.25 0 0 1 7.5 21h6a2.25 2.25 0 0 1 2.25-2.25z" />
                     </svg>  
                     Se connecter
                 </a>

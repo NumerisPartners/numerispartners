@@ -7,6 +7,18 @@
 
         <title>{{ config('app.name', 'Numeris Partners') }}</title>
 
+        <!-- Dark Mode Initialization - Prevent FOUC -->
+        <script>
+            // Check for dark mode preference on page load
+            if (localStorage.getItem('darkMode') === 'true' || 
+                (localStorage.getItem('darkMode') === null && 
+                window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -16,6 +28,9 @@
         <link rel="stylesheet" href="{{ mix('css/custom.css') }}">
         <link rel="stylesheet" href="{{ mix('css/main.css') }}">
 
+        <!-- Alpine.js via CDN - Mise à jour vers la dernière version -->
+        <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js"></script>
+
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
       
@@ -24,23 +39,7 @@
         <div class="min-h-screen">
             <!-- Header -->
             @include('layouts.header')
-
-            <!-- Page Heading -->
-            @isset($header)
-                <div class="breadcrumb-area bg-relative" style="background-image: url('{{ asset('images/bg/breadcrumb.png') }}')">
-                    <div class="banner-bg-img"></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-7 col-lg-8">
-                                <div class="breadcrumb-inner text-center">
-                                    <h2>{{ $header }}</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endisset
-
+            
             <!-- Page Content -->
             <main>
                 @if(isset($slot))

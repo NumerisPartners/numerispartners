@@ -1,12 +1,12 @@
 <div class="">
     <div class="container">
-        <div class="flex flex-col md:flex-row">
-            <div class="custom-md:w-1/2">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2  mb-8 md:mb-0 md:pr-8">
                 <div class="wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     <img class="main-img custom-sm:m-[24px] rounded-lg shadow-lg" src="{{ asset('images/about/about_06.png') }}" alt="img">
                 </div>
             </div>
-            <div class="custom-md:w-1/2 wow animated fadeInRight" data-wow-duration="0.8s"
+            <div class="md:w-1/2 mb-8 md:mb-0 wow animated fadeInRight" data-wow-duration="0.8s"
                 data-wow-delay="0.3s">
                 <div class="mt-[48px] custom-md:mt-0 mb-0 custom-md:ps-[24px]">
                     <h2 class="title">Expertises</h2>

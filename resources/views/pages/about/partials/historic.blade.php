@@ -9,7 +9,7 @@
             
             </div>
             <div class="md:w-1/2">
-                <img src="https://placehold.co/600x400/indigo/white?text=Notre+Histoire" alt="Notre Histoire" class="rounded-lg shadow-lg">
+                <img src="{{ asset('images/about/about_03.png') }}" alt="Notre Histoire" class="rounded-lg shadow-lg">
             </div>
         </div>
     </div>

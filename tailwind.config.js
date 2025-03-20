@@ -9,7 +9,7 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
+    darkMode: 'class', // Activation du mode sombre basé sur la classe
     theme: {
         extend: {
             fontFamily: {
