@@ -9205,8 +9205,7 @@ dl,ol,ul {
     font-size: 16px;
     font-weight: 600;
     --tw-text-opacity: 1;
-    color: #101a29;
-    color: rgba(16,26,41,var(--tw-text-opacity))
+  
 }
 
 
@@ -10941,9 +10940,6 @@ dl,ol,ul {
 .single-progressbar {
     border-radius: 0;
     margin-top: 0;
-    --tw-bg-opacity: 1;
-    background-color: #fff;
-    background-color: rgba(255,255,255,var(--tw-bg-opacity))
 }
 
 
@@ -16235,12 +16231,8 @@ dl,ol,ul {
 
 
 .footer-bottom {
-    border-top-width: 1px;
     position: relative;
     z-index: 2;
-    --tw-border-opacity: 1;
-    border-color: #e3e3e3;
-    border-color: rgba(227,227,227,var(--tw-border-opacity));
     padding-bottom: 23px;
     padding-top: 23px
 }
@@ -16969,8 +16961,7 @@ dl,ol,ul {
     gap: 12px;
     justify-content: center;
     --tw-text-opacity: 1;
-    color: #150e3d;
-    color: rgba(21,14,61,var(--tw-text-opacity))
+
 }
 
 

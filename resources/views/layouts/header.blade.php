@@ -1,6 +1,6 @@
 <!-- navbar start -->
-<header>
-    <nav class="navbar navbar-area navbar-area-2 !mt-0 navbar-expand-lg bg-white">
+<header role="navigation">
+    <nav class="navbar navbar-area navbar-area-2 !mt-0 navbar-expand-lg bg-white dark:bg-[#150443]" aria-label="Navigation principale">
     <div class="container nav-container">
         <div class="responsive-mobile-menu">
         <button class="menu toggle-btn block custom-md:hidden" data-target="#itech_main_menu" aria-expanded="false"
@@ -43,22 +43,22 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="itech_main_menu">
-        <ul class="navbar-nav menu-open custom-md:!text-center custom-md:ps-[48px]">
+        <ul class="navbar-nav menu-open custom-md:!text-center custom-md:ps-[48px]" aria-label="Menu principal">
             <li>
-                <a href="{{ route('home') }}">Accueil</a>
+                <a href="{{ route('home') }}" class="dark:text-white">Accueil</a>
             </li>
             <li>
-                <a href="{{ route('about') }}">A propos</a>
+                <a href="{{ route('about') }}" class="dark:text-white">A propos</a>
             </li>
             <li>
-                <a href="{{ route('services') }}">Services & Expertises</a>
+                <a href="{{ route('services') }}" class="dark:text-white">Services & Expertises</a>
             </li>
             <li>
-                <a href="{{ route('contact.index') }}">Nous contacter</a>
+                <a href="{{ route('contact.index') }}" class="dark:text-white">Nous contacter</a>
             </li>
             @auth
             <li>
-                <a href="{{ route('dashboard') }}">Tableau de bord</a>
+                <a href="{{ route('dashboard') }}" class="dark:text-white">Tableau de bord</a>
             </li>
             @endauth
         </ul>
@@ -94,18 +94,21 @@
             </div>
             
             @guest
-                <a href="{{ route('login') }}" class="btn btn-border-base me-2">
+                <a href="{{ route('login') }}" class="btn btn-border-base me-2 dark:text-white">
                     <svg class="size-6 fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V9m3 0V5.25A2.25 2.25 0 0 1 19.5 3h-6a2.25 2.25 0 0 1-2.25 2.25v13.5A2.25 2.25 0 0 1 7.5 21h6a2.25 2.25 0 0 1 2.25-2.25z" />
                     </svg>  
                     Se connecter
                 </a>
-                <a href="{{ route('register') }}" class="btn btn-base">
+                <!-- <a href="{{ route('register') }}" class="btn btn-base">
+                    S'inscrire
+                </a> -->
+                <a href="{{ route('register') }}" class="border-2 border-blue-500 text-blue-600 px-6 py-2 rounded-full hover:bg-blue-500 hover:text-white transition duration-300 shadow-sm dark:text-white">
                     S'inscrire
                 </a>
             @else
                 <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
-                    <button @click="open = ! open" class="btn btn-border-base flex items-center">
+                    <button @click="open = ! open" class="btn btn-border-base flex items-center dark:text-white">
                         {{ Auth::user()->name }}
                         <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -121,14 +124,14 @@
                          x-transition:leave-end="transform opacity-0 scale-95"
                          class="absolute z-50 mt-2 w-48 rounded-md shadow-lg origin-top-right right-0"
                          style="display: none;">
-                        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
-                            <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition">
+                        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white dark:bg-[#050231]">
+                            <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition dark:text-white">
                                 Profil
                             </a>
 
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <button type="submit" class="w-full text-left block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition">
+                                <button type="submit" class="w-full text-left block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition dark:text-white">
                                     Déconnexion
                                 </button>
                             </form>

@@ -322,6 +322,12 @@ body {
   margin: 0 var(--spacing-lg, 1.5rem);
 }
 
+.box-shadow-padding {
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(19, 16, 34, 0.06);
+  padding: 40px 35px;
+}
+
 .section {
   padding: 4rem 0;
 }

@@ -40,6 +40,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    // Gestion des messages de contact (protégée par authentification)
+    Route::get('/messages', [ContactController::class, 'messages'])->name('contact.messages');
+    Route::get('/messages/{contact}', [ContactController::class, 'show'])->name('contact.show');
+    Route::post('/messages/{contact}/mark-as-replied', [ContactController::class, 'markAsReplied'])->name('contact.mark-as-replied');
 });
 
 require __DIR__.'/auth.php';

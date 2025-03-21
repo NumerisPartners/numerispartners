@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="single-service-inner text-center">
+                    <div class="single-service-inner style-2 text-center">
                         <div class="thumb">
                             <img src="{{ asset('images/service/1.png') }}" alt="img">
                         </div>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="single-service-inner text-center">
+                    <div class="single-service-inner style-2 text-center">
                         <div class="thumb">
                             <img src="{{ asset('images/service/2.png') }}" alt="img">
                         </div>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="single-service-inner text-center">
+                    <div class="single-service-inner style-2 text-center">
                         <div class="thumb">
                             <img src="{{ asset('images/service/3.png') }}" alt="img">
                         </div>
@@ -49,6 +49,18 @@
                             <h3><a href="{{ route('contact.index') }}">Nous contacter</a></h3>
                             <p>Une question? Besoin d'un conseil? N'hésitez pas à nous contacter.</p>
                             <a class="btn btn-border-base" href="{{ route('contact.index') }}">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="single-service-inner style-2 text-center">
+                        <div class="thumb">
+                            <img src="{{ asset('images/service/4.png') }}" alt="img">
+                        </div>
+                        <div class="details">
+                            <h3><a href="{{ route('contact.messages') }}">Messages de contact</a></h3>
+                            <p>Consultez et gérez les messages envoyés via le formulaire de contact.</p>
+                            <a class="btn btn-border-base" href="{{ route('contact.messages') }}">Voir les messages</a>
                         </div>
                     </div>
                 </div>

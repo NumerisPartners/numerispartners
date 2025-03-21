@@ -35,7 +35,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
       
     </head>
-    <body class="antialiased home-14">
+    <body class="antialiased home-14 dark:bg-[#050231] dark:text-white">
         <div class="min-h-screen">
             <!-- Header -->
             @include('layouts.header')
