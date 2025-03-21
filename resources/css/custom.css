@@ -10576,8 +10576,6 @@ dl,ol,ul {
 .single-list-inner.style-heading li {
     font-weight: 600;
     --tw-text-opacity: 1;
-    color: #101a29;
-    color: rgba(16,26,41,var(--tw-text-opacity))
 }
 
 .border-radius-6,.border-radius-6 img {
