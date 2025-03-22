@@ -15,14 +15,14 @@
         <!-- Email Address -->
         <div class="single-input-inner">
             <label for="email" class="text-gray-700 dark:text-white">Adresse email</label>
-            <input id="email" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 " type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username" />
+            <input id="email" required="required" aria-required="required" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 " type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
         </div>
 
         <!-- Password -->
         <div class="single-input-inner mt-4">
             <label for="password" class="text-gray-700 dark:text-white">Mot de passe</label>
-            <input id="password" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 " type="password" name="password" required autocomplete="current-password" />
+            <input id="password" required="required" aria-required="required" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 " type="password" name="password" required autocomplete="current-password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
         </div>
 

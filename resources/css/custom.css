@@ -10185,13 +10185,13 @@ dl,ol,ul {
 }
 
 .breadcrumb-area {
-    background-image: url(../images/bg/7.png);
+    /* background-image: url(../images/bg/7.png);
     background-position: 50%;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
+    padding: 222px 0 108px; */
     margin-top: -120px;
-    padding: 222px 0 108px;
     position: relative
 }
 
@@ -10227,9 +10227,6 @@ dl,ol,ul {
     margin-left: 8px;
     padding-left: 17px;
     position: relative;
-    --tw-text-opacity: 1;
-    color: #101a29;
-    color: rgba(16,26,41,var(--tw-text-opacity))
 }
 
 .breadcrumb-area .page-list li:after {

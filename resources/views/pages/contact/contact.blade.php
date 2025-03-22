@@ -23,10 +23,11 @@
             
             <form action="{{ route('contact.submit') }}" method="POST">
                 @csrf
+                <p class="text-gray-700 dark:text-white mb-4">Tous les champs de ce formulaire sont obligatoires.</p>
                 <div class="row">
                    <div class="custom-sm:w-full">
                       <div class="single-input-inner">
-                         <input name="name" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('name') border-red-500 @enderror" type="text" placeholder="Nom complet" required>
+                         <input name="name" required="required" aria-required="required" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('name') border-red-500 @enderror" type="text" placeholder="Nom complet">
                          @error('name')
                             <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                          @enderror
@@ -34,7 +35,7 @@
                    </div>
                    <div class="custom-sm:w-full">
                       <div class="single-input-inner">
-                         <input name="email" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('email') border-red-500 @enderror" type="email" placeholder="Email" required>
+                         <input name="email" required="required" aria-required="required" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('email') border-red-500 @enderror" type="email" placeholder="Email">
                          @error('email')
                             <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                          @enderror
@@ -42,7 +43,7 @@
                    </div>
                    <div class="custom-sm:w-full">
                       <div class="single-input-inner">
-                         <input name="subject" value="{{ old('subject') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('subject') border-red-500 @enderror" type="text" placeholder="Sujet" required>
+                         <input name="subject" required="required" aria-required="required" value="{{ old('subject') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('subject') border-red-500 @enderror" type="text" placeholder="Sujet">
                          @error('subject')
                             <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                          @enderror
@@ -50,7 +51,7 @@
                    </div>
                    <div class="w-full">
                       <div class="single-input-inner">
-                         <textarea name="message" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('message') border-red-500 @enderror" placeholder="Message" required>{{ old('message') }}</textarea>
+                         <textarea name="message" required="required" aria-required="required" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('message') border-red-500 @enderror" placeholder="Message">{{ old('message') }}</textarea>
                          @error('message')
                             <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                          @enderror
