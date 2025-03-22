@@ -44,23 +44,24 @@
         </div>
         <div class="collapse navbar-collapse" id="itech_main_menu">
         <ul class="navbar-nav menu-open custom-md:!text-center custom-md:ps-[48px]" aria-label="Menu principal">
-            <li>
-                <a href="{{ route('home') }}" class="dark:text-white">Accueil</a>
-            </li>
-            <li>
-                <a href="{{ route('about') }}" class="dark:text-white">A propos</a>
-            </li>
-            <li>
-                <a href="{{ route('services') }}" class="dark:text-white">Services & Expertises</a>
-            </li>
-            <li>
-                <a href="{{ route('contact.index') }}" class="dark:text-white">Nous contacter</a>
-            </li>
             @auth
+                <li>
+                    <a href="{{ route('dashboard') }}" class="dark:text-white {{ request()->routeIs('dashboard') ? 'active font-semibold text-blue-600 dark:text-blue-400' : '' }}" {{ request()->routeIs('dashboard') ? 'aria-current="page"' : '' }}>Dashboard</a>
+                </li>
+            @endauth    
             <li>
-                <a href="{{ route('dashboard') }}" class="dark:text-white">Tableau de bord</a>
+                <a href="{{ route('home') }}" class="dark:text-white {{ request()->routeIs('home') ? 'active font-semibold text-blue-600 dark:text-blue-400' : '' }}" {{ request()->routeIs('home') ? 'aria-current="page"' : '' }}>Accueil</a>
             </li>
-            @endauth
+            <li>
+                <a href="{{ route('about') }}" class="dark:text-white {{ request()->routeIs('about') ? 'active font-semibold text-blue-600 dark:text-blue-400' : '' }}" {{ request()->routeIs('about') ? 'aria-current="page"' : '' }}>A propos</a>
+            </li>
+            <li>
+                <a href="{{ route('services') }}" class="dark:text-white {{ request()->routeIs('services') ? 'active font-semibold text-blue-600 dark:text-blue-400' : '' }}" {{ request()->routeIs('services') ? 'aria-current="page"' : '' }}>Services & Expertises</a>
+            </li>
+            <li>
+                <a href="{{ route('contact.index') }}" class="dark:text-white {{ request()->routeIs('contact.index') ? 'active font-semibold text-blue-600 dark:text-blue-400' : '' }}" {{ request()->routeIs('contact.index') ? 'aria-current="page"' : '' }}>Nous contacter</a>
+            </li>
+           
         </ul>
         </div>
         <div class="nav-right-part nav-right-part-desktop custom-md:inline-flex items-center">

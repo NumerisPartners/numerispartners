@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Contact')
+@section('title', 'Nous contacter')
 
 @section('content')
     <!-- page title start -->
-    <x-breadcrumb title="Contact" />
+    <x-breadcrumb title="Nous contacter" />
    <!-- page title end -->
    <!-- contact area start -->
    <div class="pd-top-120 pd-bottom-120">

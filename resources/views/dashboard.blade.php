@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-slot name="title">Tableau de bord</x-slot>
     <!-- <x-slot name="header">
         Tableau de bord
     </x-slot> -->

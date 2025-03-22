@@ -10,12 +10,8 @@
 
                     
                   <h1 class="title wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                     <span>L'innovation</span> est la seule façon de
-                     <span>gagner</span> dans un monde qui <span>change constamment </span> 
+                     <span> Passez à l’ère numérique en conjuguant stratégie, leadership et performance data</span> 
                   </h1>
-                  <p class="content custom-lg:pe-[48px] wow animated fadeInLeft font-semibold" data-wow-duration="0.8s"
-                     data-wow-delay="0.9s">Eric Schmidt
-                  </p>
                   <a class="btn btn-base wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s"
                      href="{{ route('services') }}">Nos services</a>
                   <div class="inline-block self-center wow animated fadeInLeft" data-wow-duration="0.8s"
