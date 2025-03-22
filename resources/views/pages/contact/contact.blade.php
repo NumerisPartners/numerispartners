@@ -7,7 +7,7 @@
     <x-breadcrumb title="Nous contacter" />
    <!-- page title end -->
    <!-- contact area start -->
-   <div class="pd-top-120 pd-bottom-120">
+   <div class="py-12 md:py-16">
       <div class="container">
          <div class="contact-page-inner bg-[#f8f9fc] dark:bg-[#150443] wow animated fadeInUp" data-wow-duration="0.8s">
             <div class="section-title mb-[24px] pb-[8px]">
