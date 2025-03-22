@@ -38,7 +38,7 @@
     <body class="antialiased home-14 dark:bg-[#050231] dark:text-white">
         <div class="min-h-screen">
             <!-- Header -->
-            @include('layouts.header')
+            @include('layouts.navigation')
             
             <!-- Page Content -->
             <main>
@@ -52,6 +52,5 @@
             <!-- Footer -->
             @include('layouts.footer')
         </div>
-      
     </body>
 </html>
