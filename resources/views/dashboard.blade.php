@@ -65,6 +65,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="single-service-inner style-2 text-center">
+                        <div class="thumb">
+                            <img src="{{ asset('images/service/5.png') }}" alt="img">
+                        </div>
+                        <div class="details">
+                            <h3><a href="{{ route('admin.users.index') }}">Gestion des utilisateurs</a></h3>
+                            <p>Consultez, ajoutez, modifiez ou supprimez les utilisateurs du système.</p>
+                            <a class="btn btn-border-base" href="{{ route('admin.users.index') }}">Gérer les utilisateurs</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

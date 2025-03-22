@@ -12525,9 +12525,10 @@ dl,ol,ul {
 }
 
 .banner-inner .title {
-    font-size: 60px;
+    /* font-size: 60px; */
     font-weight: 700;
-    margin-bottom: 1.25rem
+    margin-bottom: 1.25rem;
+    line-height: 1.28;
 }
 
 .banner-inner .title span {
@@ -18759,7 +18760,7 @@ dl,ol,ul {
 
 .home-14 .title {
     font-weight: 400;
-    text-transform: capitalize
+    /* text-transform: capitalize */
 }
 
 .home-14 .title,.home-14 .title span {
@@ -20653,7 +20654,7 @@ i,img,svg {
     }
 
     .banner-inner .title {
-        font-size: 40px
+        /* font-size: 40px */
     }
 
     .banner-inner .subtitle {

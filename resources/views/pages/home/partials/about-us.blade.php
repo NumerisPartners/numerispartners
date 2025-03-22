@@ -6,7 +6,7 @@
             <div class="about-thumb-inner custom-lg:p-[48px] pt-[24px] wow animated fadeInLeft"
                 data-wow-duration="0.8s" data-wow-delay="0.3s">
                 <img class="animate-main-img" src="{{ asset('images/about/14.png') }}" alt="img">
-                <img class="main-img custom-sm:m-[24px]" src="{{ asset('images/about/13.png') }}" alt="img">
+                <img class="main-img custom-sm:m-[24px]" src="{{ asset('images/about/about_12.png') }}" alt="img">
             </div>
         </div>
         <div class="custom-md:w-1/2 wow animated fadeInRight" data-wow-duration="0.8s"

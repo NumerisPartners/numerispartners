@@ -4,15 +4,15 @@
          <div class="row">
             <div class="w-full custom-md:w-8/12 custom-lg:w-6/12">
                <div class="banner-inner">
-                  <p class="subtitle wow animated fadeInLeft m-0" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                  <p class="subtitle wow animated fadeInLeft mb-4" data-wow-duration="0.8s" data-wow-delay="0.3s">
                      Empowering Leaders, Driving Innovation
                   </p>
 
                     
-                  <h1 class="title wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                  <h1 class="title text-3xl md:text-5xl wow animated fadeInLeft mb-6" data-wow-duration="0.8s" data-wow-delay="0.6s">
                      <span> Passez à l’ère numérique en conjuguant stratégie, leadership et performance data</span> 
                   </h1>
-                  <a class="btn btn-base wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s"
+                  <a class="btn btn-base wow animated fadeInLeft me-6" data-wow-duration="0.8s" data-wow-delay="0.6s"
                      href="{{ route('services') }}">Nos services</a>
                   <div class="inline-block self-center wow animated fadeInLeft" data-wow-duration="0.8s"
                      data-wow-delay="0.7s">

@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/messages', [ContactController::class, 'messages'])->name('contact.messages');
     Route::get('/messages/{contact}', [ContactController::class, 'show'])->name('contact.show');
     Route::post('/messages/{contact}/mark-as-replied', [ContactController::class, 'markAsReplied'])->name('contact.mark-as-replied');
+    
+    // Routes d'administration
+    Route::prefix('admin')->name('admin.')->group(function () {
+        // Gestion des utilisateurs
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
 });
 
 require __DIR__.'/auth.php';
