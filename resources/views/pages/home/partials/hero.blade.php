@@ -30,7 +30,7 @@
       <img class="animate-img-1 animate-topImageBounce" src="./images/banner/2.png" alt="img">
       <img class="animate-img-2 animate-leftImageBounce" src="./images/banner/5.svg" alt="img">
       <div class="banner-14-thumb">
-         <img src="{{ asset('images/service/app_mobile.png') }}" alt="Image">
+         <img src="{{ asset('images/home-14/banner/banner-thumb.png') }}" alt="Image">
       </div>
       <div class="banner-13-thumb-sm">
          <img src="{{ asset('images/home-14/banner/banner-shape.png') }}" alt="Image">
