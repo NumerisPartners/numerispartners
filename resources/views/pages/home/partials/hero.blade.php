@@ -21,7 +21,7 @@
                         <h6 class="inline-block">Nous contacter</h6>
                      </a> -->
 
-                     <a href="{{ route('contact.index') }}" class="btn btn-border-base wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">Nous contacter</a>
+                     <a href="{{ route('contact.index') }}" class="btn btn-border-base-outline wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">Nous contacter</a>
                   </div>
                </div>
             </div>

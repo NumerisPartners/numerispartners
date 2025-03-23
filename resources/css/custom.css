@@ -10522,7 +10522,6 @@ dl,ol,ul {
 }
 
 .single-list-inner {
-    margin: 0;
     padding: 0
 }
 
@@ -18178,7 +18177,6 @@ dl,ol,ul {
 }
 
 .footer-area {
-    margin-top: 90px;
     position: relative
 }
 

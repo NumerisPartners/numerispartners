@@ -9,9 +9,9 @@
                </div>
                <div class="details">
                   <p>Solutions digitales innovantes pour votre entreprise.</p>
-                  <p class="mt-[16px]"><i class="fa fa-phone-alt"></i> (+888) 123 456 765</p>
-                  <p class="mt-[8px]"><i class="fas fa-envelope"></i> (+888) 123 456 765</p>
-                  <ul class="social-media">
+                  <p class="mt-[16px]"><i class="fa fa-phone-alt"></i> +33 66 724 45 13</p>
+                  <p class="mt-[8px]"><i class="fas fa-envelope"></i> contact@heuristikpartners.com</p>
+                  <!-- <ul class="social-media">
                      <li>
                         <a href="index.html">
                            <i class="fab fa-facebook-f"></i>
@@ -32,7 +32,7 @@
                            <i class="fab fa-youtube"></i>
                         </a>
                      </li>
-                  </ul>
+                  </ul> -->
                </div>
             </div>
          </div>
@@ -49,16 +49,16 @@
             </div>
          </div>
 
-         <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
+         <div class="custom-sm:w-1/2 custom-md:w-1/3 ">
             <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                <h2 class="widget-title">Nos Services</h2>
                <ul>
-                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Ui Design</a></li>
-                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Web design</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Stratégie de Transformation Digitale</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Développement Web, Mobile & Bases de données</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Design UX/UI</a></li>
                   <li><a href="service.html"><i class="fas fa-arrow-right"></i> Digital marketing </a></li>
-                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Video Editing</a></li>
-                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Pc Repairs</a></li>
-                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Web Development</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Migration d’applications</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Tests d’application, audits</a></li>
                </ul>
             </div>
          </div>
