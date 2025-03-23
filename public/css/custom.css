@@ -13749,7 +13749,6 @@ dl,ol,ul {
 
 
 .single-input-inner input {
-    border: 0!important;
     border-radius: .375rem;
     font-weight: 300;
     height: 50px;
@@ -13773,7 +13772,6 @@ dl,ol,ul {
 
 
 .single-input-inner textarea {
-    border: 0!important;
     border-radius: .375rem;
     font-weight: 300;
     height: 140px;

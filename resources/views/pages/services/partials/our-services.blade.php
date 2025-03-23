@@ -14,7 +14,7 @@
             <a class="btn btn-base !mt-0 me-[16px]" href="index.html">Découvrir nos services</a>
         </div>
         <div class="md:w-1/2">
-            <img src="{{ asset('images/about/about_06.png') }}" alt="Développement Web" class="rounded-lg shadow-lg">
+            <img src="{{ asset('images/about/about_06.webp') }}" alt="Développement Web" class="rounded-lg shadow-lg">
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
             <a class="btn btn-base !mt-0 me-[16px]" href="index.html">Découvrir nos services</a>
         </div>
         <div class="md:w-1/2">
-            <img src="{{ asset('images/about/about_09.png') }}" alt="Applications Mobiles" class="rounded-lg shadow-lg">
+            <img src="{{ asset('images/about/about_09.webp') }}" alt="Applications Mobiles" class="rounded-lg shadow-lg">
         </div>
     </div>
 </div>
@@ -56,7 +56,7 @@
             <a class="btn btn-base !mt-0 me-[16px]" href="index.html">Découvrir nos services</a>
         </div>
         <div class="md:w-1/2">
-            <img src="{{ asset('images/about/about_11.jpg') }}" alt="Design UX/UI" class="rounded-lg shadow-lg">
+            <img src="{{ asset('images/about/about_11.webp') }}" alt="Design UX/UI" class="rounded-lg shadow-lg">
         </div>
     </div>
 </div>

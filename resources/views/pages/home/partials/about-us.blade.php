@@ -6,14 +6,14 @@
             <div class="about-thumb-inner custom-lg:p-[48px] pt-[24px] wow animated fadeInLeft"
                 data-wow-duration="0.8s" data-wow-delay="0.3s">
                 <img class="animate-main-img" src="{{ asset('images/about/14.png') }}" alt="img">
-                <img class="main-img custom-sm:m-[24px]" src="{{ asset('images/about/about_12.png') }}" alt="img">
+                <img class="main-img custom-sm:m-[24px] rounded" src="{{ asset('images/about/service_02.webp') }}" alt="img">
             </div>
         </div>
         <div class="custom-md:w-1/2 wow animated fadeInRight" data-wow-duration="0.8s"
             data-wow-delay="0.3s">
             <div class="section-title text-left mt-[48px] custom-md:mt-0">
                 <p class="sub-title m-0 text-left  dark:text-white">Notre histoire</p>
-                <h2 class="title text-left dark:text-white">  Inspirez et transformez grâce à un    
+                <h2 class="title text-left dark:text-white">Inspirez et transformez grâce à un    
                     <span>leadership</span> visionnaire soutenu par <span>la data</span> </h2>
                 <p class="content !mb-[24px] custom-lg:!mb-[48px] text-left dark:text-white"><strong>Heuristik Partners</strong> est une société de conseil en Stratégie, 
                     Leadership et en Transformation digitale et data.</p>
