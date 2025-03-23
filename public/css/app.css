@@ -940,9 +940,6 @@ select {
 .border-t {
     border-top-width: 1px;
 }
-.\!border-\[rgba\(50\2c 47\2c 47\2c 1\)\] {
-    border-color: rgba(50,47,47,1) !important;
-}
 .border-\[\#19140035\] {
     border-color: #19140035;
 }
@@ -973,6 +970,10 @@ select {
 .border-gray-400 {
     --tw-border-opacity: 1;
     border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
+}
+.border-gray-500 {
+    --tw-border-opacity: 1;
+    border-color: rgb(107 114 128 / var(--tw-border-opacity, 1));
 }
 .border-green-400 {
     --tw-border-opacity: 1;
@@ -2198,10 +2199,6 @@ select {
     .sm\:col-span-2 {
         grid-column: span 2 / span 2;
     }
-    .sm\:-my-px {
-        margin-top: -1px;
-        margin-bottom: -1px;
-    }
     .sm\:mx-auto {
         margin-left: auto;
         margin-right: auto;
@@ -2215,9 +2212,6 @@ select {
     }
     .sm\:ml-4 {
         margin-left: 1rem;
-    }
-    .sm\:ms-10 {
-        margin-inline-start: 2.5rem;
     }
     .sm\:mt-0 {
         margin-top: 0px;
@@ -2383,9 +2377,6 @@ select {
     }
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .md\:grid-cols-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .md\:grid-cols-4 {
         grid-template-columns: repeat(4, minmax(0, 1fr));

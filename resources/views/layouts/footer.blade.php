@@ -64,7 +64,7 @@
          </div>
       </div>
    </div>
-   <div class="footer-bottom !border-[rgba(50,47,47,1)]">
+   <div class="footer-bottom border-t border-gray-500 dark:border-indigo-500">
       <div class="container">
          <div class="row">
             <div class="custom-sm:w-1/2 self-center">
