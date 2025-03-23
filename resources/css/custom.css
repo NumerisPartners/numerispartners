@@ -5797,9 +5797,7 @@ img,video {
     display: none!important
 }
 
-.hidden {
-    display: none
-}
+.sm\:hidden{display:none}
 
 .\!w-3\/12 {
     width: 25%!important
@@ -19858,12 +19856,12 @@ dl,ol,ul {
     }
 
     .home-14 .banner-14 {
-        padding-bottom: 200px;
-        padding-top: 200px
+        padding-bottom: 145px;
+        padding-top: 155px;
     }
 
     .home-14 .banner-14 .banner-14-thumb img {
-        max-width: 45vw
+        max-width: 33vw
     }
 
     .home-14 .faq-area .about-thumb-inner {

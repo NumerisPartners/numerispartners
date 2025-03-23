@@ -5,7 +5,7 @@
          <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
             <div class="widget widget_about wow animated fadeInUp" data-wow-duration="0.8s">
                <div class="thumb">
-                  <img src="./images/logo2.png" alt="img">
+                  <img src="{{ asset('images/logo2.png') }}" alt="img">
                </div>
                <div class="details">
                   <p>Solutions digitales innovantes pour votre entreprise.</p>
@@ -68,12 +68,12 @@
       <div class="container">
          <div class="row">
             <div class="custom-sm:w-1/2 self-center">
-               <p>© {{ date('Y') }} Heuristik Partners. Tous droits réservés.</p>
+               <p>&copy; {{ date('Y') }} Heuristik Partners. Tous droits réservés.</p>
             </div>
             <div class="custom-sm:w-1/2    custom-md:!text-end">
-               <a href="index.html">Mentions légales </a>
-               <a href="index.html">Politique de confidentialité</a>
-               <a href="index.html">Plan du site</a>
+               <a href="{{ route('legal.mentions-legales') }}">Mentions légales </a>
+               <a href="{{ route('legal.politique-confidentialite') }}">Politique de confidentialité</a>
+               <a href="{{ route('legal.plan-du-site') }}">Plan du site</a>
             </div>
          </div>
       </div>

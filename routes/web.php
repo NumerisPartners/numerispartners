@@ -32,6 +32,13 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
+// Pages légales
+Route::prefix('legal')->name('legal.')->group(function () {
+    Route::view('/mentions-legales', 'pages.legal.mentions-legales')->name('mentions-legales');
+    Route::view('/politique-confidentialite', 'pages.legal.politique-confidentialite')->name('politique-confidentialite');
+    Route::view('/plan-du-site', 'pages.legal.plan-du-site')->name('plan-du-site');
+});
+
 // Routes d'authentification
 Route::get('/dashboard', function () {
     return view('dashboard');

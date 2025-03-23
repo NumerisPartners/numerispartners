@@ -13,8 +13,8 @@
             data-wow-delay="0.3s">
             <div class="section-title text-left mt-[48px] custom-md:mt-0">
                 <p class="sub-title m-0 text-left  dark:text-white">Notre histoire</p>
-                <h2 class="title text-left dark:text-white"> Passez à l’ère numérique en conjuguant  
-                    <span>stratégie, leadership</span> et performance data </h2>
+                <h2 class="title text-left dark:text-white">  Inspirez et transformez grâce à un    
+                    <span>leadership</span> visionnaire soutenu par <span>la data</span> </h2>
                 <p class="content !mb-[24px] custom-lg:!mb-[48px] text-left dark:text-white"><strong>Heuristik Partners</strong> est une société de conseil en Stratégie, 
                     Leadership et en Transformation digitale et data.</p>
                 <div class="media shadow-2xl p-[16px] border-radius-5 mb-[16px] dark:shadow-none dark:border dark:border-indigo-500">
