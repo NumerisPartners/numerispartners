@@ -39,7 +39,7 @@
         @include('layouts.header')
 
         <!-- Breadcrumb -->
-        <div class="breadcrumb-area bg-relative bg-cover bg-center">
+        {{-- <div class="breadcrumb-area bg-relative bg-cover bg-center">
             <div class="banner-bg-img"></div>
             <div class="container">
                 <div class="row justify-content-center">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Auth Content -->
         <div class="service-area pd-top-120 pd-bottom-120">
