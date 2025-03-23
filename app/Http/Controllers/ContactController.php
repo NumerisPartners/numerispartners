@@ -26,12 +26,19 @@ class ContactController extends Controller
      */
     public function submit(Request $request)
     {
-        $validated = $request->validate([
+        $rules = [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
-        ]);
+        ];
+        
+        // En production, on exige le captcha
+        if (app()->environment('production')) {
+            $rules['g-recaptcha-response'] = 'required|captcha';
+        }
+        
+        $validated = $request->validate($rules);
 
         // Enregistrer le message dans la base de données
         Contact::create([

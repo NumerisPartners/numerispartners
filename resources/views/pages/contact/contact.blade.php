@@ -2,6 +2,30 @@
 
 @section('title', 'Nous contacter')
 
+@push('scripts')
+    {!! NoCaptcha::renderJs() !!}
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'contact'})
+                        .then(function(token) {
+                            document.getElementById('recaptchaResponse').value = token;
+                            contactForm.submit();
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+@endpush
+
 @section('content')
     <!-- page title start -->
     <x-breadcrumb title="Nous contacter" />
@@ -21,8 +45,9 @@
             </div>
             @endif
             
-            <form action="{{ route('contact.submit') }}" method="POST">
+            <form action="{{ route('contact.submit') }}" method="POST" id="contactForm">
                 @csrf
+                <input type="hidden" id="recaptchaResponse" name="g-recaptcha-response">
                 <p class="text-gray-700 dark:text-white mb-4">Tous les champs de ce formulaire sont obligatoires.</p>
                 <div class="row">
                    <div class="custom-sm:w-full">
@@ -57,6 +82,11 @@
                          @enderror
                       </div>
                    </div>
+                   <div class="w-full mb-4">
+                       @error('g-recaptcha-response')
+                          <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
+                       @enderror
+                    </div>
                    <div class="w-full text-center">
                       <button type="submit" class="btn btn-base border-radius-5 dark:text-white">Envoyer</button>
                    </div>

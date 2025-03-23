@@ -1,8 +1,8 @@
 @props(['title'])
-<div class="breadcrumb-area pt-32  pb-7  md:pt-44  md:pb-26 bg-gradient-to-r from-blue-50 to-slate-50 dark:bg-gradient-to-r dark:from-[#3e2485] dark:to-[#0e032d]">
+<div class="breadcrumb-area pt-32  pb-11  md:pt-40  md:pb-26 bg-gradient-to-r from-blue-50 to-slate-50 dark:bg-gradient-to-r dark:from-[#3e2485] dark:to-[#0e032d]">
     <div class="container">
         <div class="breadcrumb-inner">
-        <div class="row justify-content-center">
+        <div class="flex justify-between items-center md:flex-row flex-col">
             <div class="custom-md:w-1/2">
                 <h1 class="md:text-4xl text-2xl font-bold text-gray-600 dark:text-white">{{ $title }}</h1>
             </div>

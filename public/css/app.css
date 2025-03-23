@@ -1190,6 +1190,9 @@ select {
 .pb-1 {
     padding-bottom: 0.25rem;
 }
+.pb-11 {
+    padding-bottom: 2.75rem;
+}
 .pb-12 {
     padding-bottom: 3rem;
 }
@@ -1201,9 +1204,6 @@ select {
 }
 .pb-4 {
     padding-bottom: 1rem;
-}
-.pb-7 {
-    padding-bottom: 1.75rem;
 }
 .pb-9 {
     padding-bottom: 2.25rem;
@@ -1727,6 +1727,10 @@ select {
 .hover\:text-red-900:hover {
     --tw-text-opacity: 1;
     color: rgb(127 29 29 / var(--tw-text-opacity, 1));
+}
+.hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 .hover\:underline:hover {
     text-decoration-line: underline;
@@ -2416,8 +2420,8 @@ select {
     .md\:pr-8 {
         padding-right: 2rem;
     }
-    .md\:pt-44 {
-        padding-top: 11rem;
+    .md\:pt-40 {
+        padding-top: 10rem;
     }
     .md\:text-4xl {
         font-size: 2.25rem;
