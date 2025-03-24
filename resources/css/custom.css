@@ -19788,9 +19788,6 @@ dl,ol,ul {
     box-shadow: var(--tw-ring-offset-shadow,0 0 rgba(0,0,0,0)),var(--tw-ring-shadow,0 0 rgba(0,0,0,0)),var(--tw-shadow)
 }
 
-.home-14 .blog-area .details {
-    max-width: 480px
-}
 
 .home-14 .blog-area .details h4 a {
     font-weight: 700;

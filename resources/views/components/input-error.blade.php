@@ -1,4 +1,8 @@
-@props(['messages'])
+@props(['for' => null, 'messages' => null])
+
+@php
+    $messages = $messages ?? $errors->get($for);
+@endphp
 
 @if ($messages)
     <ul {{ $attributes->merge(['class' => 'text-sm text-red-600 space-y-1']) }}>

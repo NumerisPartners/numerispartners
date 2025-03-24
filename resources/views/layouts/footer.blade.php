@@ -44,6 +44,7 @@
                   <li><a href="{{ route('home') }}"><i class="fas fa-arrow-right"></i> Accueil</a></li>
                   <li><a href="{{ route('services') }}"><i class="fas fa-arrow-right"></i> Services</a></li>
                   <li><a href="{{ route('about') }}"><i class="fas fa-arrow-right"></i> À propos</a></li>
+                  <li><a href="{{ route('blog.index') }}"><i class="fas fa-arrow-right"></i> Blog</a></li>
                   <li><a href="{{ route('contact.index') }}"><i class="fas fa-arrow-right"></i> Contact</a></li>
                </ul>
             </div>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title', config('app.name', 'Heuristik Partners')) | {{ config('app.name', 'Heuristik Partners') }}</title>
+        <title>{{ $title ?? '' }}@hasSection('title')@yield('title')@endif {{ (isset($title) || View::hasSection('title')) ? '|' : '' }} {{ config('app.name', 'Heuristik Partners') }}</title>
 
         <!-- Dark Mode Initialization - Prevent FOUC -->
         <script>

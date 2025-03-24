@@ -7,6 +7,9 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Admin\BlogCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +42,13 @@ Route::prefix('legal')->name('legal.')->group(function () {
     Route::view('/plan-du-site', 'pages.legal.plan-du-site')->name('plan-du-site');
 });
 
+// Page blog
+Route::prefix('blog')->name('blog.')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('index');
+    Route::get('/category/{category:slug}', [BlogController::class, 'category'])->name('category');
+    Route::get('/{blog:slug}', [BlogController::class, 'show'])->name('show');
+});
+
 // Routes d'authentification
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -55,12 +65,32 @@ Route::middleware('auth')->group(function () {
     Route::post('/messages/{contact}/mark-as-replied', [ContactController::class, 'markAsReplied'])->name('contact.mark-as-replied');
     
     // Routes d'administration
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware(['verified'])->prefix('admin')->name('admin.')->group(function () {
         // Gestion des utilisateurs
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
         Route::post('/users', [UserController::class, 'store'])->name('users.store');
         Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+        
+        // Blog routes
+        Route::prefix('blog')->name('blog.')->group(function () {
+            Route::get('/', [AdminBlogController::class, 'index'])->name('index');
+            Route::get('/create', [AdminBlogController::class, 'create'])->name('create');
+            Route::post('/', [AdminBlogController::class, 'store'])->name('store');
+            Route::get('/{blog}/edit', [AdminBlogController::class, 'edit'])->name('edit');
+            Route::put('/{blog}', [AdminBlogController::class, 'update'])->name('update');
+            Route::delete('/{blog}', [AdminBlogController::class, 'destroy'])->name('destroy');
+            
+            // Blog categories routes
+            Route::prefix('categories')->name('categories.')->group(function () {
+                Route::get('/', [BlogCategoryController::class, 'index'])->name('index');
+                Route::get('/create', [BlogCategoryController::class, 'create'])->name('create');
+                Route::post('/', [BlogCategoryController::class, 'store'])->name('store');
+                Route::get('/{category}/edit', [BlogCategoryController::class, 'edit'])->name('edit');
+                Route::put('/{category}', [BlogCategoryController::class, 'update'])->name('update');
+                Route::delete('/{category}', [BlogCategoryController::class, 'destroy'])->name('destroy');
+            });
+        });
     });
 });
 

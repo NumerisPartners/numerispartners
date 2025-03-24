@@ -30,6 +30,11 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ route('blog.index') }}" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                                            <i class="fas fa-angle-right mr-2"></i> Blog
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('contact.index') }}" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                                             <i class="fas fa-angle-right mr-2"></i> Contact
                                         </a>

@@ -1,6 +1,6 @@
 <nav x-data="{ open: false, darkMode: localStorage.getItem('darkMode') === 'true' }" class="relative z-50 bg-white dark:bg-[#150443] border-b border-gray-100 dark:border-gray-800 shadow-sm">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container">
         <div class="flex justify-between h-20">
             <div class="flex items-center">
                 <!-- Logo -->
@@ -23,6 +23,10 @@
                     <a href="{{ route('services') }}" 
                        class="inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('services') ? 'border-blue-500 text-blue-600 dark:text-blue-400 font-semibold' : 'border-transparent' }}">
                         Services & Expertises
+                    </a>
+                    <a href="{{ route('blog.index') }}" 
+                       class="inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('blog.index') ? 'border-blue-500 text-blue-600 dark:text-blue-400 font-semibold' : 'border-transparent' }}">
+                        Blog
                     </a>
                     <a href="{{ route('contact.index') }}" 
                        class="inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('contact.index') ? 'border-blue-500 text-blue-600 dark:text-blue-400 font-semibold' : 'border-transparent' }}">
@@ -143,6 +147,10 @@
             <a href="{{ route('services') }}" 
                class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('services') ? 'border-blue-500 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 font-semibold' : 'border-transparent' }}">
                 Services & Expertises
+            </a>
+            <a href="{{ route('blog.index') }}" 
+               class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('blog.index') ? 'border-blue-500 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 font-semibold' : 'border-transparent' }}">
+                Blog
             </a>
             <a href="{{ route('contact.index') }}" 
                class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('contact.index') ? 'border-blue-500 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 font-semibold' : 'border-transparent' }}">
