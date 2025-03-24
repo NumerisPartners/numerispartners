@@ -3,7 +3,7 @@
 
     <x-breadcrumb title="{{ $blog->title }}" />
 
-    <div class="blog-area py-12 md:py-16">
+    <div class="blog-area py-12 md:py-16 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
         <div class="container">
             <div class="row">
                 <div class="custom-md:w-8/12">
@@ -62,7 +62,9 @@
                         
                         <div class="blog-admin media wow animated fadeInUp mt-8" data-wow-duration="0.8s">
                             <div class="media-left pe-[16px]">
-                                <img class="avatar" alt="{{ $blog->user->name }}" src="{{ $blog->user->profile_photo_url ?? asset('images/about/default-avatar.png') }}" />
+                                <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
                             </div>
                             <div class="media-body self-center">
                                 <h6 class="dark:text-white">{{ $blog->user->name }}</h6>

@@ -1,4 +1,4 @@
-<section class="py-16">
+<section class="py-16 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">

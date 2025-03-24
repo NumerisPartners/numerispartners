@@ -2,7 +2,7 @@
     @section('title', 'Politique de confidentialité')
     <x-breadcrumb title="Politique de confidentialité" />
 
-    <div class="py-12">
+    <div class="py-12 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-breadcrumb title="Créer un nouvel article" />
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Créer un nouvel article') }}
@@ -6,7 +7,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="container">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6">
                 <form action="{{ route('admin.blog.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -46,14 +47,14 @@
 
                         <div class="col-span-1 md:col-span-2">
                             <x-input-label for="excerpt" value="{{ __('Extrait') }}" />
-                            <textarea id="excerpt" name="excerpt" rows="3" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block mt-1 w-full">{{ old('excerpt') }}</textarea>
+                            <textarea id="excerpt-editor" name="excerpt" rows="3" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block mt-1 w-full">{{ old('excerpt') }}</textarea>
                             <x-input-error for="excerpt" class="mt-2" />
                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Un court résumé de l'article qui sera affiché dans les listes d'articles.</p>
                         </div>
 
                         <div class="col-span-1 md:col-span-2">
                             <x-input-label for="content" value="{{ __('Contenu') }}" />
-                            <textarea id="content" name="content" rows="10" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block mt-1 w-full">{{ old('content') }}</textarea>
+                            <textarea id="content-editor" name="content" rows="10" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block mt-1 w-full">{{ old('content') }}</textarea>
                             <x-input-error for="content" class="mt-2" />
                         </div>
 
@@ -87,6 +88,7 @@
     </div>
 
     @push('scripts')
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Générer automatiquement le slug à partir du titre
@@ -100,6 +102,24 @@
                     .replace(/\s+/g, '-')
                     .replace(/-+/g, '-');
             });
+
+            // Initialiser CKEditor pour l'extrait
+            ClassicEditor
+                .create(document.querySelector('#excerpt-editor'), {
+                    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'undo', 'redo']
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+            // Initialiser CKEditor pour le contenu
+            ClassicEditor
+                .create(document.querySelector('#content-editor'), {
+                    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'insertTable', 'mediaEmbed', '|', 'undo', 'redo']
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         });
     </script>
     @endpush

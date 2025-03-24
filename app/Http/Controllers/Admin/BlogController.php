@@ -48,7 +48,7 @@ class BlogController extends Controller
             'category_id' => 'required|exists:blog_categories,id',
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
-            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'is_published' => 'boolean',
             'published_at' => 'nullable|date',
         ]);
@@ -58,19 +58,19 @@ class BlogController extends Controller
             $imagePath = $request->file('featured_image')->store('blog', 'public');
             $validated['featured_image'] = $imagePath;
         }
-
-        // Définir l'utilisateur actuel comme auteur
-        $validated['user_id'] = auth()->id();
         
         // Définir la date de publication si l'article est publié
         if ($request->has('is_published') && $request->is_published && !$request->published_at) {
             $validated['published_at'] = now();
         }
-
+        
+        // Associer l'utilisateur connecté à l'article
+        $validated['user_id'] = auth()->id();
+        
+        // Créer l'article
         Blog::create($validated);
-
-        return redirect()->route('admin.blog.index')
-                        ->with('success', 'Article créé avec succès.');
+        
+        return redirect()->route('admin.blog.index')->with('success', 'Article créé avec succès.');
     }
 
     /**
@@ -98,7 +98,7 @@ class BlogController extends Controller
             'category_id' => 'required|exists:blog_categories,id',
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
-            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'is_published' => 'boolean',
             'published_at' => 'nullable|date',
         ]);
@@ -121,8 +121,7 @@ class BlogController extends Controller
 
         $blog->update($validated);
 
-        return redirect()->route('admin.blog.index')
-                        ->with('success', 'Article mis à jour avec succès.');
+        return redirect()->route('admin.blog.index')->with('success', 'Article mis à jour avec succès.');
     }
 
     /**

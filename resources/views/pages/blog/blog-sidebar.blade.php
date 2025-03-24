@@ -11,18 +11,18 @@
 
     <div class="widget widget_categories">
         <h4 class="widget-title dark:text-white">Catégories</h4>
-        <ul>
+        <ul class="catagory-items">
             @foreach($categories as $cat)
                 <li>
                     <a href="{{ route('blog.category', $cat->slug) }}" class="dark:text-gray-300">
-                        {{ $cat->name }} <span>({{ $cat->blogs_count }})</span>
+                        {{ $cat->name }} <span class="dark:text-white">({{ $cat->blogs_count }})</span>
                     </a>
                 </li>
             @endforeach
         </ul>
     </div>
 
-    <div class="widget widget_recent_post">
+    <div class="widget widget-recent-post">
         <h4 class="widget-title dark:text-white">Articles récents</h4>
         <ul>
             @foreach($recentPosts as $post)
@@ -30,13 +30,13 @@
                     <div class="media">
                         <div class="media-left">
                             @if($post->featured_image)
-                                <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}">
+                                <img class="w-28" src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}">
                             @else
-                                <img src="{{ asset('images/blog/default-thumbnail.jpg') }}" alt="{{ $post->title }}">
+                                <img class="w-28" src="{{ asset('images/blog/default-thumbnail.jpg') }}" alt="{{ $post->title }}">
                             @endif
                         </div>
                         <div class="media-body">
-                            <h6 class="title dark:text-gray-300"><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h6>
+                            <h6 class="title dark:text-gray-300"><a href="{{ route('blog.show', $post->slug) }}" class="dark:text-white">{{ $post->title }}</a></h6>
                             <span class="post-date dark:text-gray-400">
                                 <i class="far fa-calendar-alt"></i>
                                 {{ $post->published_at ? $post->published_at->format('d M Y') : $post->created_at->format('d M Y') }}

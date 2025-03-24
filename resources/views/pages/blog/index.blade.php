@@ -34,7 +34,7 @@
                                         <li><i class="far fa-folder-open"></i> {{ $blog->category->name }}</li>
                                     </ul>
                                     <h2 class="title dark:text-white"><a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a></h2>
-                                    <p class="dark:text-gray-300">{{ $blog->excerpt ?? Str::limit(strip_tags($blog->content), 200) }}</p>
+                                    <p class="dark:text-gray-300">{!! $blog->excerpt ?? Str::limit(strip_tags($blog->content), 200) !!}</p>
                                     <a class="btn btn-border-base mt-4" href="{{ route('blog.show', $blog->slug) }}">Lire la suite <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>

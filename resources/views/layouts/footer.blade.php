@@ -50,7 +50,7 @@
             </div>
          </div>
 
-         <div class="custom-sm:w-1/2 custom-md:w-1/3 ">
+         <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
             <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                <h2 class="widget-title">Nos Services</h2>
                <ul>
@@ -60,6 +60,19 @@
                   <li><a href="service.html"><i class="fas fa-arrow-right"></i> Digital marketing </a></li>
                   <li><a href="service.html"><i class="fas fa-arrow-right"></i> Migration d’applications</a></li>
                   <li><a href="service.html"><i class="fas fa-arrow-right"></i> Tests d’application, audits</a></li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
+            <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+               <h2 class="widget-title">Nos Formations</h2>
+               <ul>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Leadership & Management</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Transformation Data & Digitale</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Transformation Agile</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Accompagnement Start up</a></li>
+                  
                </ul>
             </div>
          </div>

@@ -26,10 +26,17 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
         ];
+        
+        // En production, on exige le captcha
+        if (app()->environment('production')) {
+            $rules['g-recaptcha-response'] = ['required', 'captcha'];
+        }
+        
+        return $rules;
     }
 
     /**
@@ -80,6 +87,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->input('email')).'|'.$this->ip());
     }
 }

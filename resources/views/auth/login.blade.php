@@ -1,6 +1,30 @@
 <x-guest-layout>
     <x-slot name="title">Connexion</x-slot>
     
+    @push('scripts')
+        {!! NoCaptcha::renderJs() !!}
+        <script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const loginForm = document.getElementById('loginForm');
+                
+                if (loginForm) {
+                    loginForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'login'})
+                            .then(function(token) {
+                                document.getElementById('recaptchaResponse').value = token;
+                                loginForm.submit();
+                            });
+                        });
+                    });
+                }
+            });
+        </script>
+    @endpush
+    
     <div class="text-center mb-5">
         <h4 class="text-gray-700 dark:text-white">Connexion à votre compte</h4>
         <p class="text-gray-700 dark:text-white">Entrez vos identifiants pour accéder à votre espace personnel</p>
@@ -9,8 +33,9 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" id="loginForm">
         @csrf
+        <input type="hidden" id="recaptchaResponse" name="g-recaptcha-response">
 
         <!-- Email Address -->
         <div class="single-input-inner">
@@ -30,6 +55,13 @@
         <div class="form-check mt-4">
             <input id="remember_me" type="checkbox" class="form-check-input text-gray-700 dark:text-white" name="remember">
             <label class="form-check-label text-gray-700 dark:text-white" for="remember_me">Se souvenir de moi</label>
+        </div>
+
+        <!-- reCAPTCHA error message -->
+        <div class="w-full mt-4">
+            @error('g-recaptcha-response')
+                <span class="text-danger text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="d-flex justify-content-between align-items-center mt-4">

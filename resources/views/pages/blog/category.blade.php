@@ -6,20 +6,20 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="container">
+            <div class="bg-white dark:bg-[#150443] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <!-- Articles de blog -->
                         <div class="lg:col-span-2">
                             @if($category->description)
                                 <div class="mb-8 p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                    <h3 class="text-lg font-semibold mb-2">À propos de cette catégorie</h3>
-                                    <p>{{ $category->description }}</p>
+                                    <h3 class="text-lg font-semibold mb-2 dark:text-white">À propos de cette catégorie</h3>
+                                    <p class="dark:text-white">{{ $category->description }}</p>
                                 </div>
                             @endif
 
-                            <h2 class="text-2xl font-bold mb-6">Articles dans la catégorie "{{ $category->name }}"</h2>
+                            <h2 class="text-2xl font-bold mb-6 dark:text-white">Articles dans la catégorie "{{ $category->name }}"</h2>
                             
                             @if($blogs->count() > 0)
                                 <div class="space-y-8">
@@ -33,17 +33,17 @@
                                                 </div>
                                             @endif
                                             <div class="md:w-2/3">
-                                                <h3 class="text-xl font-bold mb-2">
-                                                    <a href="{{ route('blog.show', $blog->slug) }}" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300">
+                                                <h3 class="text-xl font-bold mb-2 dark:text-white">
+                                                    <a href="{{ route('blog.show', $blog->slug) }}" class="text-indigo-600 dark:text-indigo-500 hover:text-indigo-800 dark:hover:text-indigo-300">
                                                         {{ $blog->title }}
                                                     </a>
                                                 </h3>
-                                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                                                    <span>{{ $blog->published_at->format('d/m/Y') }}</span>
-                                                    <span class="mx-2">•</span>
-                                                    <span>Par {{ $blog->user->name }}</span>
+                                                <div class="flex items-center text-sm dark:text-gray-400 mb-3">
+                                                    <span class="dark:text-white">{{ $blog->published_at->format('d/m/Y') }}</span>
+                                                    <span class="mx-2 dark:text-white">•</span>
+                                                    <span class="dark:text-white">Par {{ $blog->user->name }}</span>
                                                 </div>
-                                                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ $blog->excerpt }}</p>
+                                                <div class="dark:text-gray-100 mb-4">{!! $blog->excerpt !!}</div>
                                                 <a href="{{ route('blog.show', $blog->slug) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
                                                     Lire la suite
                                                 </a>
