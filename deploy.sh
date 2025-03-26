@@ -4,6 +4,7 @@ echo "===== DÉBUT DU DÉPLOIEMENT DE NUMERISPARTNERS ====="
 echo "$(date)"
 echo "=================================================="
 
+
 # Mettre le site en mode maintenance
 echo "Mise en mode maintenance..."
 php artisan down --message="Le site est en cours de maintenance. Nous serons de retour dans quelques minutes." || true

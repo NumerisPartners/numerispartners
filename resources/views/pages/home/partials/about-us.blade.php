@@ -1,5 +1,5 @@
  <!-- about area start -->
- <div class="about-area pd-top-120 pd-bottom-110">
+ <div class="about-area py-12 md:py-16">
     <div class="container">
         <div class="row">
         <div class="custom-md:w-1/2">

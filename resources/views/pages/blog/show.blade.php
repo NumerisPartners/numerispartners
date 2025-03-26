@@ -43,15 +43,25 @@
                                         
                                         <div class="!w-6/12 border-right-1">
                                             @if($previousBlog)
-                                                <a class="btn btn-base border-radius-5" href="{{ route('blog.show', $previousBlog->slug) }}" title="{{ $previousBlog->title }}">
-                                                    <i class="fas fa-chevron-left !mt-0"></i> Précédent
+                                                <a href="{{ route('blog.show', $previousBlog->slug) }}" title="{{ $previousBlog->title }}"
+                                                    class="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="ml-1 font-bold text-lg">Précédent</span>
                                                 </a>
                                             @endif
                                         </div>
                                         <div class="!w-6/12 text-end">
                                             @if($nextBlog)
-                                                <a class="btn btn-base border-radius-5" href="{{ route('blog.show', $nextBlog->slug) }}" title="{{ $nextBlog->title }}">
-                                                    Suivant <i class="fas fa-chevron-right !mt-0"></i>
+                                                <a href="{{ route('blog.show', $nextBlog->slug) }}" title="{{ $nextBlog->title }}"
+                                                    class="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50">
+                                                    <span class="mr-1 font-bold text-lg">Suivant</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                                                        </path>
+                                                    </svg>
                                                 </a>
                                             @endif
                                         </div>

@@ -37,11 +37,16 @@
     </head>
     <body class="antialiased home-14 dark:bg-[#050231] dark:text-white">
         <div class="min-h-screen">
+            <!-- Skip Nav -->
+            @include('layouts.skipnav')
+            
             <!-- Header -->
-            @include('layouts.navigation')
+            <header id="main-menu" role="navigation">
+                @include('layouts.navigation')
+            </header>
             
             <!-- Page Content -->
-            <main>
+            <main role="main" id="main-content">
                 @if(isset($slot))
                     {{ $slot }}
                 @else

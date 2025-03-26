@@ -1,5 +1,5 @@
 <!-- footer area start -->
-<footer class="footer-area bg-black dark:bg-[#0e032d] bg-cover bg-center p-10 m-0 dark:border-t-4 dark:border-t-indigo-500" role="contentinfo">
+<footer id="footer" role="contentinfo" class="footer-area bg-black dark:bg-[#0e032d] bg-cover bg-center p-10 m-0 dark:border-t-4 dark:border-t-indigo-500" role="contentinfo">
    <div class="container">
       <div class="row">
          <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
@@ -85,9 +85,9 @@
                <p>&copy; {{ date('Y') }} Heuristik Partners. Tous droits réservés.</p>
             </div>
             <div class="custom-sm:w-1/2    custom-md:!text-end">
-               <a href="{{ route('legal.mentions-legales') }}">Mentions légales </a>
-               <a href="{{ route('legal.politique-confidentialite') }}">Politique de confidentialité</a>
-               <a href="{{ route('legal.plan-du-site') }}">Plan du site</a>
+               <a class="inline-block hover:text-blue-500 focus:text-blue-500" href="{{ route('legal.mentions-legales') }}">Mentions légales </a>
+               <a class="inline-block hover:text-blue-500 focus:text-blue-500" href="{{ route('legal.politique-confidentialite') }}">Politique de confidentialité</a>
+               <a class="inline-block hover:text-blue-500 focus:text-blue-500" href="{{ route('legal.plan-du-site') }}">Plan du site</a>
             </div>
          </div>
       </div>
