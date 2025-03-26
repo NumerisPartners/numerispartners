@@ -36,7 +36,7 @@
     </head>
     <body class="antialiased home-14 dark:bg-[#050231]  dark:text-white">
         <!-- Header -->
-        @include('layouts.header')
+        @include('layouts.navigation')
 
         <!-- Breadcrumb -->
         {{-- <div class="breadcrumb-area bg-relative bg-cover bg-center">

@@ -1,5 +1,5 @@
 <!-- footer area start -->
-<footer class="footer-area bg-black dark:bg-[#0e032d] bg-cover bg-center p-10 m-0 dark:border-t-4 dark:border-t-indigo-500" role="contentinfo">
+<footer id="footer" role="contentinfo" class="footer-area bg-black dark:bg-[#0e032d] bg-cover bg-center p-10 m-0 dark:border-t-4 dark:border-t-indigo-500" role="contentinfo">
    <div class="container">
       <div class="row">
          <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
@@ -44,12 +44,13 @@
                   <li><a href="{{ route('home') }}"><i class="fas fa-arrow-right"></i> Accueil</a></li>
                   <li><a href="{{ route('services') }}"><i class="fas fa-arrow-right"></i> Services</a></li>
                   <li><a href="{{ route('about') }}"><i class="fas fa-arrow-right"></i> À propos</a></li>
+                  <li><a href="{{ route('blog.index') }}"><i class="fas fa-arrow-right"></i> Blog</a></li>
                   <li><a href="{{ route('contact.index') }}"><i class="fas fa-arrow-right"></i> Contact</a></li>
                </ul>
             </div>
          </div>
 
-         <div class="custom-sm:w-1/2 custom-md:w-1/3 ">
+         <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
             <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                <h2 class="widget-title">Nos Services</h2>
                <ul>
@@ -62,6 +63,19 @@
                </ul>
             </div>
          </div>
+
+         <div class="custom-sm:w-1/2 custom-md:w-1/4 ">
+            <div class="widget widget_nav_menu wow animated fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+               <h2 class="widget-title">Nos Formations</h2>
+               <ul>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Leadership & Management</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Transformation Data & Digitale</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Transformation Agile</a></li>
+                  <li><a href="service.html"><i class="fas fa-arrow-right"></i> Accompagnement Start up</a></li>
+                  
+               </ul>
+            </div>
+         </div>
       </div>
    </div>
    <div class="footer-bottom border-t border-gray-500 dark:border-indigo-500">
@@ -71,9 +85,9 @@
                <p>&copy; {{ date('Y') }} Heuristik Partners. Tous droits réservés.</p>
             </div>
             <div class="custom-sm:w-1/2    custom-md:!text-end">
-               <a href="{{ route('legal.mentions-legales') }}">Mentions légales </a>
-               <a href="{{ route('legal.politique-confidentialite') }}">Politique de confidentialité</a>
-               <a href="{{ route('legal.plan-du-site') }}">Plan du site</a>
+               <a class="inline-block hover:text-blue-500 focus:text-blue-500" href="{{ route('legal.mentions-legales') }}">Mentions légales </a>
+               <a class="inline-block hover:text-blue-500 focus:text-blue-500" href="{{ route('legal.politique-confidentialite') }}">Politique de confidentialité</a>
+               <a class="inline-block hover:text-blue-500 focus:text-blue-500" href="{{ route('legal.plan-du-site') }}">Plan du site</a>
             </div>
          </div>
       </div>

@@ -1,4 +1,4 @@
-<section class="py-16 bg-white dark:bg-[#050231]">
+<section class="py-16 bg-white dark:bg-[#050231] wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
     <div class="container mx-auto px-4">
         <div class="section-title mb-12 flex flex-col items-center justify-center">
             <p class="sub-title dark:text-white">Compétences et Talents</p>

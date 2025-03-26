@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title', config('app.name', 'Heuristik Partners')) | {{ config('app.name', 'Heuristik Partners') }}</title>
+        <title>{{ $title ?? '' }}@hasSection('title')@yield('title')@endif {{ (isset($title) || View::hasSection('title')) ? '|' : '' }} {{ config('app.name', 'Heuristik Partners') }}</title>
 
         <!-- Dark Mode Initialization - Prevent FOUC -->
         <script>
@@ -37,11 +37,16 @@
     </head>
     <body class="antialiased home-14 dark:bg-[#050231] dark:text-white">
         <div class="min-h-screen">
+            <!-- Skip Nav -->
+            @include('layouts.skipnav')
+            
             <!-- Header -->
-            @include('layouts.navigation')
+            <header id="main-menu" role="navigation">
+                @include('layouts.navigation')
+            </header>
             
             <!-- Page Content -->
-            <main>
+            <main role="main" id="main-content">
                 @if(isset($slot))
                     {{ $slot }}
                 @else
@@ -52,5 +57,7 @@
             <!-- Footer -->
             @include('layouts.footer')
         </div>
+        
+        @stack('scripts')
     </body>
 </html>

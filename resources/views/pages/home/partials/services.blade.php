@@ -1,5 +1,5 @@
 <!-- service area start -->
-<div class="service-area bg-relative pd-top-100 pd-bottom-100 dark:bg-[#150443]">
+<div class="service-area bg-relative py-12 md:py-16 dark:bg-[#150443]">
       <img class="position-bottom-left animate-topImageBounce" src="{{ asset('images/icon/4.png') }}" alt="img">
       <div class="container">
          <div class="section-title text-center wow animated fadeInUp" data-wow-duration="0.8s">

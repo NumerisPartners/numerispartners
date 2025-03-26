@@ -36,6 +36,12 @@ body {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
+.home-14 .blog-area__home .blog-meta span {
+  height: auto;
+  width: auto;
+  background-color: inherit;
+}
+
 .alert {
   padding: var(--spacing-md, 1rem) var(--spacing-lg, 1.5rem);
   border-radius: var(--border-radius-md, 0.25rem);

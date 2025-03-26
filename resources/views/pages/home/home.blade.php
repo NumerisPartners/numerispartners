@@ -18,5 +18,8 @@
     <!-- Why Choose Us Section -->
     @include('pages.about.partials.choose')
 
+    <!-- Blog Section -->
+    @include('pages.home.partials.blog')
+
   
 @endsection

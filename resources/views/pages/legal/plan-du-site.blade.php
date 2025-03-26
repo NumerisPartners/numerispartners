@@ -2,7 +2,7 @@
     @section('title', 'Plan du site')
     <x-breadcrumb title="Plan du site" />
 
-    <div class="py-12">
+    <div class="py-12 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -27,6 +27,11 @@
                                     <li>
                                         <a href="{{ route('about') }}" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                                             <i class="fas fa-angle-right mr-2"></i> À propos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('blog.index') }}" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                                            <i class="fas fa-angle-right mr-2"></i> Blog
                                         </a>
                                     </li>
                                     <li>
