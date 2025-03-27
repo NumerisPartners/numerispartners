@@ -1,3 +1,24 @@
+<!-- Consultancy -->
+<div id="consultancy" class="mb-16 scroll-mt-20 pb-9 border-b border-gray-200 dark:border-gray-700 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="flex flex-col md:flex-row-reverse items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+            <h2 class="text-3xl font-bold mb-4 text-indigo-600 uppercase">Conseil</h2>
+            <p class="text-gray-500 dark:text-white mb-4"><strong>Heuristik Partners</strong> déploie toute une offre en Stratégie et organisation, en 
+                leadership et un accompagnement pour vos stratégiques pour tirer partie du meilleur de la data et du digital</p>
+            <ul class="space-y-2 single-list-inner style-check style-heading style-check mb-7">
+                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Organisation & Stratégie</li>
+                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Direction Projets / Programmes</li>
+                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Risque Management</li>
+                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Leadership transformationnel</li>
+            </ul>
+            <a class="btn btn-base !mt-0 me-[16px]" href="{{ route('services') }}">Découvrir nos services</a>
+        </div>
+        <div class="md:w-1/2">
+            <img src="{{ asset('images/about/about_09.webp') }}" alt="Applications Mobiles" class="rounded-lg shadow-lg">
+        </div>
+    </div>
+</div>
+
 <!-- Expertises -->
 <div id="expertises" class="mb-16 scroll-mt-20 pb-9 border-b border-gray-200 dark:border-gray-700 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
     <div class="flex flex-col md:flex-row items-center">
@@ -19,26 +40,7 @@
     </div>
 </div>
 
-<!-- Consultancy -->
-<div id="consultancy" class="mb-16 scroll-mt-20 pb-9 border-b border-gray-200 dark:border-gray-700 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
-    <div class="flex flex-col md:flex-row-reverse items-center">
-        <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
-            <h2 class="text-3xl font-bold mb-4 text-indigo-600 uppercase">Conseil</h2>
-            <p class="text-gray-500 dark:text-white mb-4"><strong>Heuristik Partners</strong> déploie toute une offre en Stratégie et organisation, en 
-                leadership et un accompagnement pour vos stratégiques pour tirer partie du meilleur de la data et du digital</p>
-            <ul class="space-y-2 single-list-inner style-check style-heading style-check mb-7">
-                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Organisation & Stratégie</li>
-                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Direction Projets / Programmes</li>
-                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Risque Management</li>
-                <li class="dark:text-white"><i class="fas fa-check-circle"></i> Leadership transformationnel</li>
-            </ul>
-            <a class="btn btn-base !mt-0 me-[16px]" href="{{ route('services') }}">Découvrir nos services</a>
-        </div>
-        <div class="md:w-1/2">
-            <img src="{{ asset('images/about/about_09.webp') }}" alt="Applications Mobiles" class="rounded-lg shadow-lg">
-        </div>
-    </div>
-</div>
+
 
 <!-- Trainings -->
 <div id="trainings" class="mb-16 scroll-mt-20 pb-9 border-b border-gray-200 dark:border-gray-700 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">

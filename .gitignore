@@ -9,12 +9,14 @@
 .env
 .env.backup
 .env.production
+.htaccess
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+documentation_deploiement.md
 /auth.json
 /.fleet
 /.idea
