@@ -12,7 +12,7 @@
                   <h1 class="title text-3xl md:text-5xl wow animated fadeInLeft mb-6" data-wow-duration="0.8s" data-wow-delay="0.6s">
                      <span> Passez à l’ère numérique en conjuguant stratégie, leadership et performance data</span> 
                   </h1>
-                  <a class="btn btn-base wow animated fadeInLeft me-6" data-wow-duration="0.8s" data-wow-delay="0.6s"
+                  <a class="btn btn-base wow animated fadeInLeft me-6 mb-4" data-wow-duration="0.8s" data-wow-delay="0.6s"
                      href="{{ route('services') }}">Nos services</a>
                   <div class="inline-block self-center wow animated fadeInLeft" data-wow-duration="0.8s"
                      data-wow-delay="0.7s">
