@@ -3,7 +3,6 @@
     
     @push('scripts')
         {!! NoCaptcha::renderJs() !!}
-        <script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const registerForm = document.getElementById('registerForm');
@@ -12,13 +11,25 @@
                     registerForm.addEventListener('submit', function(e) {
                         e.preventDefault();
                         
-                        grecaptcha.ready(function() {
-                            grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'register'})
-                            .then(function(token) {
-                                document.getElementById('recaptchaResponse').value = token;
-                                registerForm.submit();
+                        try {
+                            grecaptcha.ready(function() {
+                                grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'register'})
+                                .then(function(token) {
+                                    document.getElementById('recaptchaResponse').value = token;
+                                    console.log('reCAPTCHA token generated successfully');
+                                    registerForm.submit();
+                                })
+                                .catch(function(error) {
+                                    console.error('reCAPTCHA execution error:', error);
+                                    // Submit the form anyway to show server-side validation errors
+                                    registerForm.submit();
+                                });
                             });
-                        });
+                        } catch (error) {
+                            console.error('reCAPTCHA initialization error:', error);
+                            // Submit the form anyway to show server-side validation errors
+                            registerForm.submit();
+                        }
                     });
                 }
             });
