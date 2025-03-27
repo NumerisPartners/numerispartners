@@ -6,7 +6,6 @@
         <script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('Register form script loaded');
                 const registerForm = document.getElementById('registerForm');
                 
                 if (registerForm) {
