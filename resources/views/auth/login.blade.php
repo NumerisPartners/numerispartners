@@ -6,6 +6,7 @@
         <script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                console.log('Login form script loaded');
                 const loginForm = document.getElementById('loginForm');
                 
                 if (loginForm) {
