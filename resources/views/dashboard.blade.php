@@ -11,13 +11,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 p-4">
                 <div class="w-full">
                     <div class="dark:border-2 dark:border-indigo-500 h-full rounded-xl py-6 px-5 md:py-8 md:px-7 text-center shadow-md transition-all hover:shadow-lg">
-                        <div class="mx-auto mb-5 md:mb-7 inline-block"><svg width="53" height="61" viewBox="0 0 53 61" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="20.8433" y="19.3018" width="10.1675" height="12.201" fill="#ABA8F7"></rect>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M42.1119 5.91343C40.9499 4.62242 39.4875 3.95192 38.2383 4.04801C36.1465 4.20891 33.9414 5.92602 31.8695 8.63549C30.0459 11.0202 28.5417 13.8917 27.5307 16.2458C33.6951 16.5488 37.7115 15.7786 40.1926 14.5916C42.7088 13.3878 43.5948 11.7969 43.7449 10.3715C43.9049 8.85254 43.2637 7.19309 42.1119 5.91343ZM8.75274 16.6855C6.24093 15.1295 4.93328 12.9984 4.69026 10.691C4.42078 8.13252 5.49249 5.64717 7.08955 3.87282C8.6764 2.10982 10.9989 0.817106 13.4643 1.00675C16.9349 1.27372 19.8489 3.94064 22.0221 6.78264C23.4868 8.69803 24.7428 10.8606 25.7343 12.8643C26.7259 10.8606 27.9818 8.69803 29.4465 6.78264C31.6197 3.94064 34.5337 1.27372 38.0043 1.00675C40.4697 0.817106 42.7922 2.10982 44.3791 3.87282C45.9761 5.64717 47.0478 8.13252 46.7784 10.691C46.5353 12.9984 45.2277 15.1295 42.7159 16.6855H49.8822C51.286 16.6855 52.4241 17.8236 52.4241 19.2274V31.1348C52.4241 32.5386 51.286 33.6766 49.8822 33.6766H49.3122V58.6608C49.3122 59.9464 48.1845 60.9886 46.7933 60.9886H31.5363L31.5191 60.9887L31.502 60.9886H20.3521L20.3349 60.9887L20.3178 60.9886H5.0608C3.66963 60.9886 2.54187 59.9464 2.54187 58.6608L2.54187 33.6766C1.13804 33.6766 0 32.5386 0 31.1348V19.2274C0 17.8236 1.13803 16.6855 2.54187 16.6855H8.75274ZM33.0443 58.1952H46.2895V33.6766H33.0443V58.1952ZM33.0443 30.6264H49.3738V19.7358H33.0443V30.6264ZM29.994 19.7358V30.6264H21.8601V19.7358H29.994ZM29.994 33.6766V58.1952H21.8601V33.6766H29.994ZM18.8098 58.1952V33.6766H5.56459V58.1952H18.8098ZM18.8098 30.6264V19.7358H3.05024V30.6264H18.8098ZM13.2303 4.04801C11.9811 3.95192 10.5187 4.62242 9.35668 5.91343C8.20488 7.19309 7.56373 8.85254 7.72372 10.3715C7.87385 11.7969 8.7598 13.3878 11.276 14.5916C13.7571 15.7786 17.7735 16.5488 23.9379 16.2458C22.9269 13.8917 21.4227 11.0202 19.5991 8.63549C17.5272 5.92602 15.3221 4.20891 13.2303 4.04801Z"
-                                    fill="#6A64F1"></path>
-                            </svg></div>
+                        <div class="mx-auto mb-5 md:mb-7 inline-block">
+                            <svg class="text-violet-500 w-14 h-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="rgba(106,100,241,1)"><path d="M2 22C2 17.5817 5.58172 14 10 14C14.4183 14 18 17.5817 18 22H2ZM10 13C6.685 13 4 10.315 4 7C4 3.685 6.685 1 10 1C13.315 1 16 3.685 16 7C16 10.315 13.315 13 10 13ZM17.3628 15.2332C20.4482 16.0217 22.7679 18.7235 22.9836 22H20C20 19.3902 19.0002 17.0139 17.3628 15.2332ZM15.3401 12.9569C16.9728 11.4922 18 9.36607 18 7C18 5.58266 17.6314 4.25141 16.9849 3.09687C19.2753 3.55397 21 5.57465 21 8C21 10.7625 18.7625 13 16 13C15.7763 13 15.556 12.9853 15.3401 12.9569Z"></path></svg>
+                        </div>
                         <div>
                             <h3 class="mb-3 md:mb-4 text-lg md:text-xl font-bold text-black sm:text-xl lg:text-xl xl:text-2xl dark:text-white"><a href="{{ route('admin.users.index') }}">Gestion des utilisateurs</a></h3>
                             <p class="text-sm md:text-base font-medium text-body-color mb-4 dark:text-white">Consultez, ajoutez, modifiez ou supprimez les utilisateurs du système.</p>
@@ -182,6 +178,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 p-4">
+                <div class="w-full">
+                    <div class="dark:border-2 dark:border-indigo-500 h-full rounded-xl py-6 px-5 md:py-8 md:px-7 text-center shadow-md transition-all hover:shadow-lg">
+                        <div class="mx-auto mb-5 md:mb-7 inline-block">
+                           <svg class="text-violet-500 w-14 h-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="rgba(106,100,241,1)"><path d="M22 20V7L20 3H4L2 7.00353V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20ZM4 9H20V19H4V9ZM5.236 5H18.764L19.764 7H4.237L5.236 5ZM15 11H9V13H15V11Z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="mb-3 md:mb-4 text-lg md:text-xl font-bold text-black sm:text-xl lg:text-xl xl:text-2xl dark:text-white">Projets clients</h3>
+                            <p class="text-sm md:text-base font-medium text-body-color mb-4 dark:text-white">Consultez et gérez les demandes de projets soumises par vos clients potentiels.</p>
+                            <a class="btn btn-border-base text-sm md:text-base w-full sm:w-auto" href="{{ route('projects.index') }}">Voir les projets <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+   
+</div>
 </x-app-layout>

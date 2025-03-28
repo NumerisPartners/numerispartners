@@ -8,28 +8,28 @@
 
     <div class="py-12">
         <div class="container">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6">
+            <div class="bg-white bg-[#f8f9fc] dark:bg-[#150443] wow animated fadeInUp overflow-hidden p-8 rounded-lg shadow-sm">
                 <form action="{{ route('admin.blog.categories.update', $category) }}" method="POST">
                     @csrf
                     @method('PUT')
 
                     <div class="grid grid-cols-1 gap-6">
                         <div>
-                            <x-input-label for="name" value="{{ __('Nom') }}" />
-                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name', $category->name)" required autofocus />
+                            <x-input-label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" value="{{ __('Nom') }}" />
+                            <x-text-input id="name" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 " type="text" name="name" :value="old('name', $category->name)" required autofocus />
                             <x-input-error for="name" class="mt-2" />
                         </div>
 
                         <div>
-                            <x-input-label for="slug" value="{{ __('Slug') }}" />
-                            <x-text-input id="slug" class="block mt-1 w-full" type="text" name="slug" :value="old('slug', $category->slug)" required />
+                            <x-input-label for="slug" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" value="{{ __('Slug') }}" />
+                            <x-text-input id="slug" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 " type="text" name="slug" :value="old('slug', $category->slug)" required />
                             <x-input-error for="slug" class="mt-2" />
                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Le slug est utilisé pour l'URL de la catégorie (ex: ma-categorie).</p>
                         </div>
 
                         <div>
-                            <x-input-label for="description" value="{{ __('Description') }}" />
-                            <textarea id="description" name="description" rows="3" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block mt-1 w-full">{{ old('description', $category->description) }}</textarea>
+                            <x-input-label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" value="{{ __('Description') }}" />
+                            <textarea id="description" name="description" rows="3" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 ">{{ old('description', $category->description) }}</textarea>
                             <x-input-error for="description" class="mt-2" />
                         </div>
                     </div>

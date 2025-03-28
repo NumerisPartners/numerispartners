@@ -8,7 +8,7 @@
 
     <div class="py-12">
         <div class="container">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6">
+            <div class="bg-[#f8f9fc] dark:bg-[#150443] wow animated fadeInUp overflow-hidden p-8 rounded-lg shadow-sm">
                 <form action="{{ route('admin.blog.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 

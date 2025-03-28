@@ -38,20 +38,6 @@
         <!-- Header -->
         @include('layouts.navigation')
 
-        <!-- Breadcrumb -->
-        {{-- <div class="breadcrumb-area bg-relative bg-cover bg-center">
-            <div class="banner-bg-img"></div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="breadcrumb-inner text-center">
-                            <h1>{{ isset($title) ? $title : 'Authentification' }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
         <!-- Auth Content -->
         <div class="service-area pd-top-120 pd-bottom-120">
             <div class="container">

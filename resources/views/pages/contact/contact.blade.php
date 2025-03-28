@@ -37,7 +37,7 @@
          <div class="contact-page-inner bg-[#f8f9fc] dark:bg-[#150443] wow animated fadeInUp" data-wow-duration="0.8s">
             <div class="section-title mb-[24px] pb-[8px]">
                <h2 class="title dark:text-white">Envoyez-nous un message </h2>
-               <p class="content mb-0 dark:text-white">Nous sommes à votre écoute. N'hésitez pas à nous contacter pour toute question ou demande de devis.</p>
+               <p class="content mb-0 dark:text-white">Nous sommes à votre écoute. N'hésitez pas à nous contacter pour toute question.</p>
             </div>
             
             @if(session('success'))
@@ -96,5 +96,7 @@
          </div>
       </div>
    </div>
+    <!-- CTA Section -->
+    @include('components.cta-section')
    
 @endsection

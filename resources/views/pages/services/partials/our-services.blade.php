@@ -43,10 +43,10 @@
 
 
 <!-- Trainings -->
-<div id="trainings" class="mb-16 scroll-mt-20 pb-9 border-b border-gray-200 dark:border-gray-700 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
-    <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-            <h2 class="text-3xl font-bold mb-4 text-indigo-600 uppercase">Formations</h2>
+<div id="trainings" class="scroll-mt-20 pb-9 border-b border-gray-200 dark:border-gray-700 wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="flex flex-col md:flex-row-reverse items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-600 uppercase">Formations</h2>
             <p class="text-gray-500 dark:text-white mb-4"> <strong>Heuristik Partners</strong> développe et propose une offre de formation riche et complète autour 
                 des problématiques de transformations (Data, Digital, Agile notamment)</p>
             <ul class="space-y-2 single-list-inner style-check style-heading style-check mb-7">
