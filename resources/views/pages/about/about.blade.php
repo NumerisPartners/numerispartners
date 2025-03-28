@@ -13,7 +13,7 @@
    @include('pages.about.partials.choose')
 
     <!-- Team Section -->
-    @include('pages.about.partials.team')
+   
 
     <!-- CTA Section -->
     @include('components.cta-section')

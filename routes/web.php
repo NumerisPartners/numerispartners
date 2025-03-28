@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ClientProjectController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
@@ -35,6 +36,10 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
+// Page de demande de projet
+Route::get('/demarrer-projet', [ClientProjectController::class, 'create'])->name('projects.create');
+Route::post('/demarrer-projet', [ClientProjectController::class, 'store'])->name('projects.store');
+
 // Pages légales
 Route::prefix('legal')->name('legal.')->group(function () {
     Route::view('/mentions-legales', 'pages.legal.mentions-legales')->name('mentions-legales');
@@ -63,6 +68,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/messages', [ContactController::class, 'messages'])->name('contact.messages');
     Route::get('/messages/{contact}', [ContactController::class, 'show'])->name('contact.show');
     Route::post('/messages/{contact}/mark-as-replied', [ContactController::class, 'markAsReplied'])->name('contact.mark-as-replied');
+    
+    // Gestion des projets clients (protégée par authentification)
+    Route::get('/projects', [ClientProjectController::class, 'index'])->name('projects.index');
+    Route::get('/projects/{project}', [ClientProjectController::class, 'show'])->name('projects.show');
+    Route::get('/projects/{project}/edit', [ClientProjectController::class, 'edit'])->name('projects.edit');
+    Route::put('/projects/{project}', [ClientProjectController::class, 'update'])->name('projects.update');
+    Route::delete('/projects/{project}', [ClientProjectController::class, 'destroy'])->name('projects.destroy');
+    Route::post('/projects/{project}/change-status', [ClientProjectController::class, 'changeStatus'])->name('projects.change-status');
     
     // Routes d'administration
     Route::middleware(['verified'])->prefix('admin')->name('admin.')->group(function () {

@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="{{ mix('css/main.css') }}">
 
         <!-- Alpine.js via CDN - Mise à jour vers la dernière version -->
-        <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js"></script>
+        <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
