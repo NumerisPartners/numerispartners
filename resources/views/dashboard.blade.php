@@ -177,6 +177,30 @@
                         
                     </div>
                 </div>
+                <div class="w-full">
+                    <div class="dark:border-2 dark:border-indigo-500 h-full rounded-xl py-6 px-5 md:py-8 md:px-7 text-center shadow-md transition-all hover:shadow-lg">
+                        <div class="mx-auto mb-5 md:mb-7 inline-block">
+                            <svg class="text-violet-500 w-14 h-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="rgba(106,100,241,1)"><path d="M3 18H21V6.00001H3V18ZM1 19C1 19.5523 1.44772 20 2 20H22C22.5523 20 23 19.5523 23 19V5.00001C23 4.44772 22.5523 4.00001 22 4.00001H2C1.44772 4.00001 1 4.44772 1 5.00001V19ZM17 16H19V14H17V16ZM17 12H19V10H17V12ZM17 8.00001H19V6.00001H17V8.00001ZM5 16H15V14H5V16ZM5 12H15V10H5V12ZM5 8.00001H15V6.00001H5V8.00001Z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="mb-3 md:mb-4 text-lg md:text-xl font-bold text-black sm:text-xl lg:text-xl xl:text-2xl dark:text-white"><a href="{{ route('admin.trainings.index') }}">Gestion des formations</a></h3>
+                            <p class="text-sm md:text-base font-medium text-body-color mb-4 dark:text-white">Créez et gérez les formations et leurs sessions avec tarifs pour particuliers et entreprises.</p>
+                            <a class="btn btn-border-base text-sm md:text-base w-full sm:w-auto" href="{{ route('admin.trainings.index') }}">Gérer les formations <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="dark:border-2 dark:border-indigo-500 h-full rounded-xl py-6 px-5 md:py-8 md:px-7 text-center shadow-md transition-all hover:shadow-lg">
+                        <div class="mx-auto mb-5 md:mb-7 inline-block">
+                            <svg class="text-violet-500 w-14 h-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="rgba(106,100,241,1)"><path d="M20 22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13Z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="mb-3 md:mb-4 text-lg md:text-xl font-bold text-black sm:text-xl lg:text-xl xl:text-2xl dark:text-white">Inscriptions aux formations</h3>
+                            <p class="text-sm md:text-base font-medium text-body-color mb-4 dark:text-white">Gérez les inscriptions aux sessions de formation et confirmez la participation des utilisateurs.</p>
+                            <a class="btn btn-border-base text-sm md:text-base w-full sm:w-auto" href="{{ route('admin.trainings.index') }}">Voir les formations <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 p-4">

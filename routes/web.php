@@ -11,6 +11,11 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\Admin\TrainingController as AdminTrainingController;
+use App\Http\Controllers\Admin\TrainingSessionController;
+use App\Http\Controllers\TrainingRegistrationController;
+use App\Http\Controllers\Admin\TrainingRegistrationController as AdminTrainingRegistrationController;
 use App\Http\Middleware\CheckRole;
 
 /*
@@ -40,6 +45,23 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 // Page de demande de projet
 Route::get('/demarrer-projet', [ClientProjectController::class, 'create'])->name('projects.create');
 Route::post('/demarrer-projet', [ClientProjectController::class, 'store'])->name('projects.store');
+
+// Pages des formations
+Route::prefix('formations')->name('trainings.')->group(function () {
+    Route::get('/', [TrainingController::class, 'index'])->name('index');
+    Route::get('/{training:slug}', [TrainingController::class, 'show'])->name('show');
+    Route::get('/{training:slug}/session/{session}', [TrainingController::class, 'showSession'])->name('session');
+    
+    // Routes pour les inscriptions aux formations
+    Route::get('/{training:slug}/session/{session}/inscription', [TrainingRegistrationController::class, 'create'])->name('register');
+    Route::post('/{training:slug}/session/{session}/inscription', [TrainingRegistrationController::class, 'store'])->name('register.store');
+});
+
+// Routes pour la gestion des inscriptions par l'utilisateur
+Route::middleware('auth')->prefix('mes-inscriptions')->name('my-registrations.')->group(function () {
+    Route::get('/', [TrainingRegistrationController::class, 'myRegistrations'])->name('index');
+    Route::post('/{registration}/cancel', [TrainingRegistrationController::class, 'cancel'])->name('cancel');
+});
 
 // Pages légales
 Route::prefix('legal')->name('legal.')->group(function () {
@@ -88,6 +110,25 @@ Route::middleware('auth')->group(function () {
             Route::post('/users', [UserController::class, 'store'])->name('users.store');
             Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
             Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+            
+            // Gestion des formations
+            Route::post('/trainings/{training}/duplicate', [AdminTrainingController::class, 'duplicate'])->name('trainings.duplicate');
+            Route::resource('trainings', AdminTrainingController::class);
+            
+            // Gestion des sessions de formation
+            Route::prefix('trainings/{training}')->name('trainings.')->group(function () {
+                Route::resource('sessions', TrainingSessionController::class);
+                
+                // Gestion des inscriptions aux sessions de formation
+                Route::prefix('sessions/{session}')->name('sessions.')->group(function () {
+                    Route::get('/registrations', [AdminTrainingRegistrationController::class, 'index'])->name('registrations.index');
+                    Route::get('/registrations/{registration}', [AdminTrainingRegistrationController::class, 'show'])->name('registrations.show');
+                    Route::post('/registrations/{registration}/confirm', [AdminTrainingRegistrationController::class, 'confirm'])->name('registrations.confirm');
+                    Route::post('/registrations/{registration}/cancel', [AdminTrainingRegistrationController::class, 'cancel'])->name('registrations.cancel');
+                    Route::delete('/registrations/{registration}', [AdminTrainingRegistrationController::class, 'destroy'])->name('registrations.destroy');
+                    Route::post('/update-available-seats', [AdminTrainingRegistrationController::class, 'updateAvailableSeats'])->name('registrations.update-seats');
+                });
+            });
         });
         
     });
