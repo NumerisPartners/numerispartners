@@ -41,19 +41,13 @@
         <!-- Auth Content -->
         <div class="service-area pd-top-120 pd-bottom-120">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="bg-[#f8f9fc] dark:bg-[#150443] p-12 rounded-md wow animated fadeInUp single-blog-inner style-2">
-                            <div class="details">
-                                @if(isset($slot))
-                                    {{ $slot }}
-                                @else
-                                    @yield('content')
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                @if(isset($slot))
+                    {{ $slot }}
+                @else
+                    @yield('content')
+                @endif
+                       
             </div>
         </div>
 

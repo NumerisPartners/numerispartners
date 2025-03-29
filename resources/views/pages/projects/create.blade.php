@@ -59,7 +59,7 @@
                         
                         <div class="single-input-inner">
                             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom complet *</label>
-                            <input name="name" id="name" required="required" aria-required="required" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('name') border-red-500 @enderror" type="text" placeholder="Votre nom complet">
+                            <input name="name" id="name" aria-invalid="true" aria-required="true" value="{{ old('name') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('name') border-red-500 @enderror" type="text" placeholder="Votre nom complet">
                             @error('name')
                                 <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                             @enderror
@@ -67,7 +67,7 @@
                         
                         <div class="single-input-inner">
                             <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
-                            <input name="email" id="email" required="required" aria-required="required" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('email') border-red-500 @enderror" type="email" placeholder="Votre adresse email">
+                            <input name="email" id="email" aria-invalid="true" aria-required="true" value="{{ old('email') }}" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('email') border-red-500 @enderror" type="email" placeholder="Votre adresse email">
                             @error('email')
                                 <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                             @enderror
@@ -96,7 +96,7 @@
                         
                         <div class="single-input-inner">
                             <label for="project_type" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Type de projet *</label>
-                            <select name="project_type" id="project_type" required="required" aria-required="required" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('project_type') border-red-500 @enderror">
+                            <select name="project_type" id="project_type" aria-invalid="true" aria-required="true" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('project_type') border-red-500 @enderror">
                                 <option value="">Sélectionnez un type de projet</option>
                                 @foreach($projectTypes as $value => $label)
                                     <option value="{{ $value }}" {{ old('project_type') == $value ? 'selected' : '' }}>{{ $label }}</option>
@@ -125,7 +125,7 @@
                         
                         <div class="single-input-inner">
                             <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description du projet *</label>
-                            <textarea name="description" id="description" required="required" aria-required="required" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('description') border-red-500 @enderror" placeholder="Décrivez votre projet, vos objectifs et vos attentes" rows="5">{{ old('description') }}</textarea>
+                            <textarea name="description" id="description" aria-invalid="true" aria-required="true" class="w-full px-4 py-3 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 @error('description') border-red-500 @enderror" placeholder="Décrivez votre projet, vos objectifs et vos attentes" rows="5">{{ old('description') }}</textarea>
                             @error('description')
                                 <span class="text-red-500 text-sm dark:text-white">{{ $message }}</span>
                             @enderror

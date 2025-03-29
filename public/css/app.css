@@ -404,9 +404,6 @@ select {
 .-ml-px {
     margin-left: -1px;
 }
-.-mr-0\.5 {
-    margin-right: -0.125rem;
-}
 .-mt-2 {
     margin-top: -0.5rem;
 }
@@ -421,6 +418,9 @@ select {
 }
 .mb-1 {
     margin-bottom: 0.25rem;
+}
+.mb-10 {
+    margin-bottom: 2.5rem;
 }
 .mb-12 {
     margin-bottom: 3rem;
@@ -454,6 +454,9 @@ select {
 }
 .mb-\[24px\] {
     margin-bottom: 24px;
+}
+.me-2 {
+    margin-inline-end: 0.5rem;
 }
 .me-6 {
     margin-inline-end: 1.5rem;
@@ -639,9 +642,6 @@ select {
 .w-10 {
     width: 2.5rem;
 }
-.w-11 {
-    width: 2.75rem;
-}
 .w-12 {
     width: 3rem;
 }
@@ -713,9 +713,6 @@ select {
 }
 .max-w-6xl {
     max-width: 72rem;
-}
-.max-w-7xl {
-    max-width: 80rem;
 }
 .max-w-\[250px\] {
     max-width: 250px;
@@ -869,11 +866,6 @@ select {
     --tw-space-x-reverse: 0;
     margin-right: calc(1rem * var(--tw-space-x-reverse));
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2rem * var(--tw-space-x-reverse));
-    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -1406,6 +1398,10 @@ select {
 .text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+}
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1;
 }
 .text-\[13px\] {
     font-size: 13px;
@@ -2262,6 +2258,10 @@ select {
     --tw-text-opacity: 1;
     color: rgb(255 68 51 / var(--tw-text-opacity, 1));
 }
+.dark\:text-blue-200:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
+}
 .dark\:text-blue-300:is(.dark *) {
     --tw-text-opacity: 1;
     color: rgb(147 197 253 / var(--tw-text-opacity, 1));
@@ -2298,6 +2298,10 @@ select {
     --tw-text-opacity: 1;
     color: rgb(220 252 231 / var(--tw-text-opacity, 1));
 }
+.dark\:text-green-200:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(187 247 208 / var(--tw-text-opacity, 1));
+}
 .dark\:text-green-300:is(.dark *) {
     --tw-text-opacity: 1;
     color: rgb(134 239 172 / var(--tw-text-opacity, 1));
@@ -2325,6 +2329,10 @@ select {
 .dark\:text-indigo-500:is(.dark *) {
     --tw-text-opacity: 1;
     color: rgb(99 102 241 / var(--tw-text-opacity, 1));
+}
+.dark\:text-red-200:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(254 202 202 / var(--tw-text-opacity, 1));
 }
 .dark\:text-red-300:is(.dark *) {
     --tw-text-opacity: 1;
@@ -2503,10 +2511,6 @@ select {
 .dark\:focus\:text-blue-300:focus:is(.dark *) {
     --tw-text-opacity: 1;
     color: rgb(147 197 253 / var(--tw-text-opacity, 1));
-}
-.dark\:focus\:text-gray-200:focus:is(.dark *) {
-    --tw-text-opacity: 1;
-    color: rgb(229 231 235 / var(--tw-text-opacity, 1));
 }
 .dark\:focus\:text-gray-500:focus:is(.dark *) {
     --tw-text-opacity: 1;
@@ -2808,12 +2812,24 @@ select {
     .md\:pt-40 {
         padding-top: 10rem;
     }
+    .md\:text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .md\:text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
     .md\:text-4xl {
         font-size: 2.25rem;
         line-height: 2.5rem;
     }
     .md\:text-5xl {
         font-size: 3rem;
+        line-height: 1;
+    }
+    .md\:text-7xl {
+        font-size: 4.5rem;
         line-height: 1;
     }
     .md\:text-base {
@@ -2922,6 +2938,9 @@ select {
     .lg\:py-20 {
         padding-top: 5rem;
         padding-bottom: 5rem;
+    }
+    .lg\:pr-12 {
+        padding-right: 3rem;
     }
     .lg\:text-2xl {
         font-size: 1.5rem;
