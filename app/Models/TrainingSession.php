@@ -18,6 +18,8 @@ class TrainingSession extends Model
      */
     protected $fillable = [
         'training_id',
+        'title',
+        'reference',
         'start_date',
         'end_date',
         'start_time',

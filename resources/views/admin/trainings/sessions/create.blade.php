@@ -1,4 +1,6 @@
 <x-app-layout>
+
+   <x-breadcrumb title="Ajouter une session" />
     <div class="container">
        
             <div class="flex justify-between items-center">
@@ -19,6 +21,13 @@
                             @csrf
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <!-- Titre de la session -->
+                                <div>
+                                    <x-input-label for="title" :value="__('Titre de la session')" />
+                                    <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required />
+                                    <x-input-error :messages="$errors->get('title')" class="mt-2" />
+                                </div>
+
                                 <!-- Date de début -->
                                 <div>
                                     <x-input-label for="start_date" :value="__('Date de début')" />

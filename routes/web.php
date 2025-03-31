@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\TrainingController as AdminTrainingController;
 use App\Http\Controllers\Admin\TrainingSessionController;
 use App\Http\Controllers\TrainingRegistrationController;
 use App\Http\Controllers\Admin\TrainingRegistrationController as AdminTrainingRegistrationController;
+use App\Http\Controllers\Admin\AllTrainingRegistrationsController;
 use App\Http\Middleware\CheckRole;
 
 /*
@@ -114,6 +115,11 @@ Route::middleware('auth')->group(function () {
             // Gestion des formations
             Route::post('/trainings/{training}/duplicate', [AdminTrainingController::class, 'duplicate'])->name('trainings.duplicate');
             Route::resource('trainings', AdminTrainingController::class);
+            
+            // Gestion des inscriptions aux formations (toutes)
+            Route::get('/registrations', [AllTrainingRegistrationsController::class, 'index'])->name('registrations.index');
+            Route::post('/registrations/{registration}/confirm', [AllTrainingRegistrationsController::class, 'confirm'])->name('registrations.confirm');
+            Route::post('/registrations/{registration}/cancel', [AllTrainingRegistrationsController::class, 'cancel'])->name('registrations.cancel');
             
             // Gestion des sessions de formation
             Route::prefix('trainings/{training}')->name('trainings.')->group(function () {

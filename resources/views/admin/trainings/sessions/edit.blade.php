@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-breadcrumb title="Modifier la session" />
     <div class="container">
         <x-slot name="header">
             <div class="flex justify-between items-center">
@@ -20,6 +21,20 @@
                             @method('PUT')
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <!-- Titre de la session -->
+                                <div>
+                                    <x-input-label for="title" :value="__('Titre de la session')" />
+                                    <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title', $session->title)" required />
+                                    <x-input-error :messages="$errors->get('title')" class="mt-2" />
+                                </div>
+
+                                <!-- Référence (lecture seule) -->
+                                <div>
+                                    <x-input-label for="reference" :value="__('Référence (générée automatiquement)')" />
+                                    <x-text-input id="reference" class="block mt-1 w-full bg-gray-100 dark:bg-gray-700" type="text" :value="$session->reference" readonly />
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">{{ __('La référence est générée automatiquement à partir des dates et de l\'ID de la session') }}</p>
+                                </div>
+
                                 <!-- Date de début -->
                                 <div>
                                     <x-input-label for="start_date" :value="__('Date de début')" />

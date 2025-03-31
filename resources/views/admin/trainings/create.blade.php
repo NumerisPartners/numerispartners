@@ -1,7 +1,9 @@
 <x-app-layout>
+    <x-breadcrumb title="Créer une formation" />
+
     <div class="container">
   
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center mb-3 mt-3">
                 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                     {{ __('Créer une formation') }}
                 </h2>
