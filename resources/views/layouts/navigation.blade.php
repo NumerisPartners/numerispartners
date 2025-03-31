@@ -1,4 +1,4 @@
-<nav x-data="{ open: false, darkMode: localStorage.getItem('darkMode') === 'true' }" class="relative z-50 bg-white dark:bg-[#150443] border-b border-gray-100 dark:border-gray-800 shadow-sm">
+<nav role="navigation" x-data="{ open: false, darkMode: localStorage.getItem('darkMode') === 'true' }" class="relative z-50 bg-white dark:bg-[#150443] border-b border-gray-100 dark:border-gray-800 shadow-sm">
     <!-- Primary Navigation Menu -->
     <div class="container">
         <div class="flex justify-between h-20">
@@ -19,7 +19,6 @@
                                 Accueil
                             </a>
                         </li>
-                       
                         <li>
                             <a href="{{ route('about') }}" 
                             class="inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 transition duration-150 ease-in-out dark:text-white hover:text-blue-600 dark:hover:text-blue-400 {{ request()->routeIs('about') ? 'border-blue-500 text-blue-600 dark:text-blue-400 font-semibold' : 'border-transparent' }}">
@@ -54,7 +53,7 @@
                     @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); 
                             if(darkMode) { document.documentElement.classList.add('dark') } 
                             else { document.documentElement.classList.remove('dark') }" 
-                    class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:bg-gray-700"
+                    class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-indigo-100 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dark:bg-gray-700"
                     :class="{ 'bg-gray-600': darkMode }"
                     role="switch"
                     :aria-checked="darkMode"
@@ -81,8 +80,9 @@
                 @guest
                     <div class="hidden md:flex md:items-center md:space-x-3">
                         <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-700 dark:hover:bg-blue-800">
-                           Se connecter
-                        </a>
+                            <svg class="h-4 w-4 text-white me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)"><path d="M4 15H6V20H18V4H6V9H4V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V15ZM10 11V8L15 12L10 16V13H2V11H10Z"></path></svg>
+                            Se connecter
+                        </a>    
                     </div>
                 @else
                     <!-- Settings Dropdown (Desktop) -->
@@ -112,6 +112,9 @@
                             <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white dark:bg-gray-800">
                                 <a href="{{ route('profile.edit') }}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 transition duration-150 ease-in-out">
                                     Profil
+                                </a>
+                                <a href="{{ route('my-registrations.index') }}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 transition duration-150 ease-in-out">
+                                    Mes inscriptions
                                 </a>
                                 <a href="{{ route('dashboard') }}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 transition duration-150 ease-in-out">
                                     Tableau de bord
@@ -186,9 +189,7 @@
             <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col items-center px-4 space-y-2">
                     <a href="{{ route('login') }}" class="w-full inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700">
-                        <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V9m3 0V5.25A2.25 2.25 0 0 1 19.5 3h-6a2.25 2.25 0 0 1-2.25 2.25v13.5A2.25 2.25 0 0 1 7.5 21h6a2.25 2.25 0 0 1 2.25-2.25z" />
-                        </svg>
+                        <svg class="h-4 w-4 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(0,0,0,1)"><path d="M4 15H6V20H18V4H6V9H4V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V15ZM10 11V8L15 12L10 16V13H2V11H10Z"></path></svg>
                         Se connecter
                     </a>
                 </div>
@@ -206,6 +207,11 @@
                         <li>
                             <a href="{{ route('profile.edit') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-gray-200 hover:text-gray-800 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition duration-150 ease-in-out">
                                 Profil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('my-registrations.index') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-gray-200 hover:text-gray-800 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition duration-150 ease-in-out">
+                                Mes inscriptions
                             </a>
                         </li>
                         <li>

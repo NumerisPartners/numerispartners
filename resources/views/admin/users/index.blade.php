@@ -40,6 +40,8 @@
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">ID</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">Nom</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">Email</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">Rôle</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">Statut</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">Date de création</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-white uppercase tracking-wider">Actions</th>
                                 </tr>
@@ -50,30 +52,62 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">{{ $user->id }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">{{ $user->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">{{ $user->email }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                            @if($user->role === 'admin')
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                                                    Admin
+                                                </span>
+                                            @elseif($user->role === 'editor')
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                                    Éditeur
+                                                </span>
+                                            @else
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                                                    Utilisateur
+                                                </span>
+                                            @endif
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                            @if($user->status === 'active')
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                                    Actif
+                                                </span>
+                                            @elseif($user->status === 'inactive')
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                                                    Inactif
+                                                </span>
+                                            @else
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                                                    Banni
+                                                </span>
+                                            @endif
+                                        </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">{{ $user->created_at->format('d/m/Y H:i') }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <div class="flex space-x-2">
-                                                <button 
-                                                    type="button" 
-                                                    class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
-                                                    onclick="openEditUserModal({{ $user->id }}, '{{ $user->name }}', '{{ $user->email }}')"
-                                                >
-                                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                                    </svg>
-                                                </button>
-                                                @if (auth()->id() !== $user->id)
-                                                    <form action="{{ route('admin.users.destroy', $user) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">
-                                                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                                                            </svg>
-                                                        </button>
-                                                    </form>
-                                                @endif
-                                            </div>
+                                           @if(auth()->user()->isAdmin())
+                                                <div class="flex space-x-2">
+                                                    <button 
+                                                        type="button" 
+                                                        class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                                                        onclick="openEditUserModal({{ $user->id }}, '{{ $user->name }}', '{{ $user->email }}', '{{ $user->role }}', '{{ $user->status }}')"
+                                                    >
+                                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                        </svg>
+                                                    </button>
+                                                    @if (auth()->id() !== $user->id)
+                                                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">
+                                                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                                </svg>
+                                                            </button>
+                                                        </form>
+                                                    @endif
+                                                </div>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
@@ -117,6 +151,22 @@
                                     <div>
                                         <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mot de passe</label>
                                         <input type="password" name="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-[#050231] dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                                    </div>
+                                    <div>
+                                        <label for="role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Rôle</label>
+                                        <select name="role" id="role" class="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-[#050231] dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                                            <option value="user">Utilisateur</option>
+                                            <option value="editor">Éditeur</option>
+                                            <option value="admin">Administrateur</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="status" class="block  text-sm font-medium text-gray-700 dark:text-gray-300">Statut</label>
+                                        <select name="status" id="status" class="mt-1 px-4 py-2 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-[#050231] dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                                            <option value="active">Actif</option>
+                                            <option value="inactive">Inactif</option>
+                                            <option value="banned">Banni</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -165,6 +215,22 @@
                                         <label for="edit_password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mot de passe (laisser vide pour ne pas modifier)</label>
                                         <input type="password" name="password" id="edit_password" class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-[#050231] dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500">
                                     </div>
+                                    <div>
+                                        <label for="edit_role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Rôle</label>
+                                        <select name="role" id="edit_role" class="mt-1 block w-full px-4 py-2 rounded-md border-gray-300 dark:border-gray-700 dark:bg-[#050231] dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                                            <option value="user">Utilisateur</option>
+                                            <option value="editor">Éditeur</option>
+                                            <option value="admin">Administrateur</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="edit_status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Statut</label>
+                                        <select name="status" id="edit_status" class="mt-1 w-full px-4 py-2 bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                                            <option value="active">Actif</option>
+                                            <option value="inactive">Inactif</option>
+                                            <option value="banned">Banni</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -191,13 +257,15 @@
             document.getElementById('addUserModal').classList.add('hidden');
         }
 
-        function openEditUserModal(id, name, email) {
+        function openEditUserModal(id, name, email, role, status) {
             const form = document.getElementById('editUserForm');
             form.action = `/admin/users/${id}`;
             
             document.getElementById('edit_name').value = name;
             document.getElementById('edit_email').value = email;
             document.getElementById('edit_password').value = '';
+            document.getElementById('edit_role').value = role;
+            document.getElementById('edit_status').value = status;
             
             document.getElementById('editUserModal').classList.remove('hidden');
         }

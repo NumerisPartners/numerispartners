@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'status',
     ];
 
     /**
@@ -44,5 +46,46 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Vérifie si l'utilisateur a un rôle spécifique
+     *
+     * @param string $role
+     * @return bool
+     */
+    public function hasRole(string $role): bool
+    {
+        return $this->role === $role;
+    }
+
+    /**
+     * Vérifie si l'utilisateur est administrateur
+     *
+     * @return bool
+     */
+    public function isAdmin(): bool
+    {
+        return $this->hasRole('admin');
+    }
+
+    /**
+     * Vérifie si l'utilisateur est éditeur
+     *
+     * @return bool
+     */
+    public function isEditor(): bool
+    {
+        return $this->hasRole('editor');
+    }
+
+    /**
+     * Vérifie si l'utilisateur est actif
+     *
+     * @return bool
+     */
+    public function isActive(): bool
+    {
+        return $this->status === 'active';
     }
 }

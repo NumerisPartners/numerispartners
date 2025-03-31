@@ -29,12 +29,16 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users'],
             'password' => ['required', Rules\Password::defaults()],
+            'role' => ['required', 'string', Rule::in(['user', 'admin', 'editor'])],
+            'status' => ['required', 'string', Rule::in(['active', 'inactive', 'banned'])],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role,
+            'status' => $request->status,
         ]);
 
         return redirect()->route('admin.users.index')
@@ -50,10 +54,14 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'password' => $request->filled('password') ? ['required', Rules\Password::defaults()] : ['nullable'],
+            'role' => ['required', 'string', Rule::in(['user', 'admin', 'editor'])],
+            'status' => ['required', 'string', Rule::in(['active', 'inactive', 'banned'])],
         ]);
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->role = $request->role;
+        $user->status = $request->status;
         
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);

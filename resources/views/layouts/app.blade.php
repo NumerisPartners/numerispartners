@@ -41,7 +41,7 @@
             @include('layouts.skipnav')
             
             <!-- Header -->
-            <header id="main-menu" role="navigation">
+            <header id="main-menu" role="banner">
                 @include('layouts.navigation')
             </header>
             

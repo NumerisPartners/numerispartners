@@ -12,18 +12,22 @@
                   <h1 class="title text-3xl md:text-5xl wow animated fadeInLeft mb-6" data-wow-duration="0.8s" data-wow-delay="0.6s">
                      <span> Passez à l’ère numérique en conjuguant stratégie, leadership et performance data</span> 
                   </h1>
-                  <a class="btn btn-base wow animated fadeInLeft me-6 mb-4" data-wow-duration="0.8s" data-wow-delay="0.6s"
-                     href="{{ route('services') }}">Nos services</a>
-                  <div class="inline-block self-center wow animated fadeInLeft" data-wow-duration="0.8s"
-                     data-wow-delay="0.7s">
-                     <a href="{{ route('contact.index') }}" class="btn btn-border-base-outline wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">Nous contacter</a>
-                  </div>
+                  <ul class="flex flex-col md:flex-row align-center mb-0 mt-8 p-0">
+                     <li>
+                        <a class="btn btn-base wow animated fadeInLeft me-6 mb-4" data-wow-duration="0.8s" data-wow-delay="0.6s"
+                           href="{{ route('services') }}">Nos services</a>
+                     </li>
+                     <li>
+                        <a href="{{ route('projects.create') }}" class="btn btn-border-base-outline wow animated fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                           Démarrer votre projet
+                        </a>
+                     </li> 
+                  </ul>
                </div>
             </div>
          </div>
       </div>
-      <img aria-hidden="true" class="animate-img-1 animate-topImageBounce" src="{{ asset('images/home-14/banner/2.png') }}" alt="">
-      <img aria-hidden="true" class="animate-img-2 animate-leftImageBounce" src="{{ asset('images/home-14/banner/5.svg') }}" alt="">
+   
       <div class="banner-14-thumb">
          <img src="{{ asset('images/home-14/banner/banner-thumb.png') }}" alt="Image">
       </div>

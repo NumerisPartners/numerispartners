@@ -5,7 +5,7 @@
             <div class="form-group">
                 <input type="text" name="search" class="form-control dark:bg-gray-700 dark:text-white" placeholder="Rechercher...">
             </div>
-            <button class="submit-btn" type="submit"><i class="fa fa-search"></i></button>
+            <button title="Rechercher" class="submit-btn" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 

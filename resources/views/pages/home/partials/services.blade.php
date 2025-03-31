@@ -11,7 +11,7 @@
             <div class="custom-md:w-1/3 custom-sm:w-1/2">
                <div class="single-service-inner text-center wow animated fadeInUp dark:bg-[#150443]" data-wow-duration="0.8s">
                   <div class="thumb">
-                     <img src="{{ asset('images/service-icon/1.png') }}" alt="img">
+                     <img src="{{ asset('images/service-icon/1.png') }}" alt="">
                   </div>
                   <div class="details">
                      <h3 class="dark:text-white"><a href="service-details.html" class="dark:text-white">Applications Mobiles</a></h3>
@@ -32,7 +32,7 @@
                <div class="single-service-inner text-center wow animated fadeInUp dark:bg-[#150443]" data-wow-duration="0.8s"
                   data-wow-delay="0.3s">
                   <div class="thumb">
-                     <img src="{{ asset('images/service-icon/2.png') }}" alt="img">
+                     <img src="{{ asset('images/service-icon/2.png') }}" alt="">
                   </div>
                   <div class="details">
                      <h3 class="dark:text-white"><a href="service-details.html" class="dark:text-white">Développement Web</a></h3>
@@ -53,7 +53,7 @@
                <div class="single-service-inner text-center wow animated fadeInUp dark:bg-[#150443]" data-wow-duration="0.8s"
                   data-wow-delay="0.6s">
                   <div class="thumb">
-                     <img src="{{ asset('images/service-icon/3.png') }}" alt="img">
+                     <img src="{{ asset('images/service-icon/3.png') }}" alt="">
                   </div>
                   <div class="details">
                      <h3 class="dark:text-white"><a href="service-details.html" class="dark:text-white">Conseil Digital</a></h3>
