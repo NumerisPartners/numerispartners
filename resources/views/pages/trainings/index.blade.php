@@ -17,7 +17,7 @@
                 @else
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach($trainings as $training)
-                            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
+                            <div class="bg-white dark:bg-[#150443] overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
                                 <div class="relative">
                                     @if($training->image)
                                         <img src="{{ asset('storage/' . $training->image) }}" alt="{{ $training->title }}" class="w-full h-48 object-cover">

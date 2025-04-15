@@ -1,8 +1,8 @@
-<x-guest-layout>
-    <x-breadcrumb title="Formation" />
+<x-app-layout>
+    <x-breadcrumb title="Détails de la formation" />
     <div class="container">
         <div class="py-12">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-[#150443] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
                     <div class="mb-6">
                         <a href="{{ route('trainings.index') }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
@@ -65,11 +65,11 @@
                             <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ $training->title }}</h1>
                             
                             <div class="prose dark:prose-invert max-w-none mb-8">
-                                <h2 class="text-xl font-semibold mb-2">Description</h2>
+                                <h2 class="text-xl font-semibold mb-2 dark:text-white">Description</h2>
                                 <p class="mb-4">{{ $training->description }}</p>
                                 
                                 @if($training->content)
-                                    <h2 class="text-xl font-semibold mb-2">Contenu détaillé</h2>
+                                    <h2 class="text-xl font-semibold mb-2 dark:text-white">Contenu détaillé</h2>
                                     <div class="mb-8">
                                         {!! nl2br(e($training->content)) !!}
                                     </div>
@@ -87,7 +87,7 @@
                                     </div>
                                 @else
                                     <div class="overflow-x-auto">
-                                        <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg">
+                                        <table class="min-w-full bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700 rounded-lg">
                                             <thead>
                                                 <tr>
                                                     <th class="px-6 py-3 border-b border-gray-300 dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Dates</th>
@@ -150,4 +150,4 @@
             </div>
         </div>
     </div>
-</x-guest-layout>
+</x-app-layout>

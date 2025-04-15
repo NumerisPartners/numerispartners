@@ -1,11 +1,11 @@
-<x-guest-layout>
-   
+<x-app-layout>
+   <x-breadcrumb title="Détails de la session" />
     <div class="container">
         <div class="py-12">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-[#150443] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
                     <div class="mb-6">
-                        <a href="{{ route('trainings.show', $training) }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                        <a href="{{ route('trainings.show', $training) }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-white dark:hover:text-blue-300">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                             </svg>
@@ -28,7 +28,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <!-- Colonne de gauche avec infos de session -->
                         <div class="lg:col-span-1">
-                            <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 mb-6">
+                            <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 mb-6 dark:bg-gray-700">
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Détails de la session</h3>
                                 
                                 <div class="space-y-4">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
 
-                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-6">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-6 dark:bg-gray-700">
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tarifs</h3>
                                 
                                 <div class="space-y-4">
@@ -90,7 +90,7 @@
                                     </div>
                                     
                                     <div>
-                                        <span class="block text-sm text-gray-500 dark:text-gray-400">Entreprise</span>
+                                        <span class="block text-sm text-gray-500 dark:text-white">Entreprise</span>
                                         <span class="text-xl font-bold text-gray-900 dark:text-white">{{ number_format($training->company_price, 2, ',', ' ') }} €</span>
                                         <span class="block text-sm text-gray-500 dark:text-gray-400">HT par personne</span>
                                     </div>
@@ -131,11 +131,11 @@
                             <h2 class="text-xl text-gray-600 dark:text-gray-400 mb-6">Session du {{ $session->start_date->format('d/m/Y') }}</h2>
                             
                             <div class="prose dark:prose-invert max-w-none mb-8">
-                                <h3 class="text-xl font-semibold mb-2">Description de la formation</h3>
+                                <h3 class="text-xl font-semibold mb-2 dark:text-white">Description de la formation</h3>
                                 <p class="mb-4">{{ $training->description }}</p>
                                 
                                 @if($training->content)
-                                    <h3 class="text-xl font-semibold mb-2">Programme détaillé</h3>
+                                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Programme détaillé</h3>
                                     <div class="mb-8">
                                         {!! nl2br(e($training->content)) !!}
                                     </div>
@@ -143,35 +143,51 @@
                             </div>
 
                             <div class="mb-8">
-                                <h3 class="text-xl font-semibold mb-4">Informations pratiques</h3>
+                                <h3 class="text-xl font-semibold mb-4 dark:text-white">Informations pratiques</h3>
                                 
                                 <div class="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <h4 class="font-medium text-gray-900 dark:text-white mb-2">Public cible</h4>
                                             <p class="text-gray-600 dark:text-gray-400">
-                                                Cette formation s'adresse aux professionnels souhaitant développer leurs compétences dans ce domaine, quel que soit leur niveau initial.
+                                                @if($training->target_audience)
+                                                    {!! nl2br(e($training->target_audience)) !!}
+                                                @else
+                                                    Cette formation s'adresse aux professionnels souhaitant développer leurs compétences dans ce domaine, quel que soit leur niveau initial.
+                                                @endif
                                             </p>
                                         </div>
                                         
                                         <div>
                                             <h4 class="font-medium text-gray-900 dark:text-white mb-2">Prérequis</h4>
                                             <p class="text-gray-600 dark:text-gray-400">
-                                                Niveau {{ $training->level }}. Consultez-nous pour plus de détails sur les prérequis spécifiques.
+                                                @if($training->prerequisites)
+                                                    {!! nl2br(e($training->prerequisites)) !!}
+                                                @else
+                                                    Niveau {{ $training->level }}. Consultez-nous pour plus de détails sur les prérequis spécifiques.
+                                                @endif
                                             </p>
                                         </div>
                                         
                                         <div>
                                             <h4 class="font-medium text-gray-900 dark:text-white mb-2">Méthodes pédagogiques</h4>
                                             <p class="text-gray-600 dark:text-gray-400">
-                                                Alternance de théorie et de pratique, exercices concrets, études de cas, mises en situation professionnelle.
+                                                @if($training->teaching_methods)
+                                                    {!! nl2br(e($training->teaching_methods)) !!}
+                                                @else
+                                                    Alternance de théorie et de pratique, exercices concrets, études de cas, mises en situation professionnelle.
+                                                @endif
                                             </p>
                                         </div>
                                         
                                         <div>
                                             <h4 class="font-medium text-gray-900 dark:text-white mb-2">Modalités d'évaluation</h4>
                                             <p class="text-gray-600 dark:text-gray-400">
-                                                Évaluation continue pendant la formation, quiz, exercices pratiques et mise en situation.
+                                                @if($training->evaluation_methods)
+                                                    {!! nl2br(e($training->evaluation_methods)) !!}
+                                                @else
+                                                    Évaluation continue pendant la formation, quiz, exercices pratiques et mise en situation.
+                                                @endif
                                             </p>
                                         </div>
                                     </div>
@@ -199,4 +215,4 @@
             </div>
         </div>  
     </div>
-</x-guest-layout>
+</x-app-layout>

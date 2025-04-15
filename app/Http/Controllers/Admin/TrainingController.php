@@ -27,7 +27,7 @@ class TrainingController extends Controller
         }
 
         // Filtre par statut
-        if ($request->has('status') && $request->status !== '') {
+        if ($request->filled('status')) {
             $query->where('is_active', $request->status);
         }
 
@@ -58,6 +58,10 @@ class TrainingController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'content' => 'nullable|string',
+            'target_audience' => 'nullable|string',
+            'prerequisites' => 'nullable|string',
+            'teaching_methods' => 'nullable|string',
+            'evaluation_methods' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'individual_price' => 'required|numeric|min:0',
             'company_price' => 'required|numeric|min:0',
@@ -110,6 +114,10 @@ class TrainingController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'content' => 'nullable|string',
+            'target_audience' => 'nullable|string',
+            'prerequisites' => 'nullable|string',
+            'teaching_methods' => 'nullable|string',
+            'evaluation_methods' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'individual_price' => 'required|numeric|min:0',
             'company_price' => 'required|numeric|min:0',
