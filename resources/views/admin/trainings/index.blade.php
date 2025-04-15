@@ -4,19 +4,17 @@
 
     <div class="container">
        
-            <div class="flex justify-between items-center mb-3 pt-3">
-                <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    {{ __('Gestion des formations') }}
-                </h2>
+            <div class="flex justify-end items-center mb-3 pt-3">
+              
                 <a href="{{ route('admin.trainings.create') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
                     {{ __('Nouvelle formation') }}
                 </a>
             </div>
        
 
-        <div class="py-12">
+        <div class="py-6">
             <div class="">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="bg-white dark:bg-[#150443] overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         @if (session('success'))
                             <div class="mb-4 p-4 bg-green-100 text-green-700 rounded">
@@ -25,7 +23,7 @@
                         @endif
 
                         <!-- Filtres et recherche -->
-                        <div class="mb-6 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <div class="mb-6 bg-gray-50 dark:bg-[#050231] p-4 rounded-lg">
                             <form action="{{ route('admin.trainings.index') }}" method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4">
                                 <div>
                                     <label for="search" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Recherche</label>
@@ -36,8 +34,8 @@
                                 <div>
                                     <label for="status" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Statut</label>
                                     <select name="status" id="status" 
-                                        class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                        <option value="">Tous les statuts</option>
+                                        class="w-full px-3 py-2 rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        <option value="" {{ request('status') === null ? 'selected' : '' }}>Tous les statuts</option>
                                         <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>Actif</option>
                                         <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>Inactif</option>
                                     </select>
@@ -45,17 +43,20 @@
                                 <div>
                                     <label for="sort" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Trier par</label>
                                     <select name="sort" id="sort" 
-                                        class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        class="w-full px-3 py-2 rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                         <option value="title" {{ request('sort') == 'title' ? 'selected' : '' }}>Titre</option>
                                         <option value="individual_price" {{ request('sort') == 'individual_price' ? 'selected' : '' }}>Prix particulier</option>
                                         <option value="company_price" {{ request('sort') == 'company_price' ? 'selected' : '' }}>Prix entreprise</option>
                                         <option value="created_at" {{ request('sort', 'created_at') == 'created_at' ? 'selected' : '' }}>Date de création</option>
                                     </select>
                                 </div>
-                                <div class="flex items-end">
-                                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition w-full">
+                                <div class="flex items-end gap-2">
+                                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition flex-1">
                                         {{ __('Filtrer') }}
                                     </button>
+                                    <a href="{{ route('admin.trainings.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition flex-1 text-center">
+                                        {{ __('Réinitialiser') }}
+                                    </a>
                                 </div>
                             </form>
                         </div>
@@ -69,7 +70,7 @@
                             </div>
                         @else
                             <div class="overflow-x-auto">
-                                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
+                                <table class="min-w-full bg-white dark:bg-[#050231] border border-gray-300 dark:border-gray-700">
                                     <thead>
                                         <tr>
                                             <th class="px-6 py-3 border-b border-gray-300 dark:border-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{ __('Titre') }}</th>
